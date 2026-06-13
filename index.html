@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranajeewa - Sethsuwa Ayurveda Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626',
+                        secondary: '#fff',
+                        accent: '#b91c1c'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+    <!-- Loading Screen - Premium Preloader -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-icon">
+                <svg class="w-16 h-16 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path>
+                </svg>
+            </div>
+            <p class="loading-text">Pranajeewa</p>
+        </div>
+    </div>
+
+    <!-- Header & Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo-container flex items-center gap-3">
+                <img src="https://www.pranajeewa.lk/assets/images/pranajeewa-logo-1.png" alt="Pranajeewa Logo" class="logo-bounce h-12 md:h-16 cursor-pointer" onclick="navigateTo('home')">
+                <span class="logo-text">Pranajeewa</span>
+            </div>
+            <div class="hidden md:flex space-x-8" id="nav-menu">
+                <a href="#" class="nav-link nav-underline" onclick="navigateTo('home'); return false;">Home</a>
+                <a href="#" class="nav-link nav-underline" onclick="navigateTo('about'); return false;">About</a>
+                <a href="#" class="nav-link nav-underline" onclick="navigateTo('treatments'); return false;">Treatments</a>
+                <a href="#" class="nav-link nav-underline" onclick="navigateTo('location'); return false;">Location</a>
+            </div>
+            <button id="hamburger" class="md:hidden hamburger-button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+            <a href="#" class="mobile-nav-link" onclick="navigateTo('home'); return false;">Home</a>
+            <a href="#" class="mobile-nav-link" onclick="navigateTo('about'); return false;">About</a>
+            <a href="#" class="mobile-nav-link" onclick="navigateTo('treatments'); return false;">Treatments</a>
+            <a href="#" class="mobile-nav-link" onclick="navigateTo('location'); return false;">Location</a>
+        </div>
+    </header>
+
+    <!-- Home Page View -->
+    <section id="home-view" class="page-view active">
+        <!-- Hero Banner Slider -->
+        <section id="home" class="hero-section min-h-screen flex items-center justify-center relative">
+            <div class="slider-container">
+                <div class="slider-slide active" data-slide="0" style="background-image: url('https://img.magnific.com/free-photo/young-sportive-man-jogging-field-sunrise_176420-5175.jpg?semt=ais_hybrid&w=740&q=80');">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-slide-in-left">Experience Ancient Healing</h1>
+                        <p class="hero-subtitle animate-slide-in-right">Discover the miraculous properties of Sethsuwa Pranajeewa medicine</p>
+                        <button class="hero-button animate-pulse-glow" onclick="navigateTo('treatments')">Explore Treatments</button>
+                    </div>
+                </div>
+                <div class="slider-slide" data-slide="1" style="background-image: url('https://previews.123rf.com/images/miragik/miragik2209/miragik220900036/191387473-lone-man-running-on-the-sand-through-sandy-desert-on-the-horizon-black-and-white.jpg');">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-slide-in-left">Traditional Ayurveda</h1>
+                        <p class="hero-subtitle animate-slide-in-right">Over 200 years of authentic herbal medicine</p>
+                        <button class="hero-button animate-pulse-glow" onclick="navigateTo('treatments')">Our Story</button>
+                    </div>
+                </div>
+                <div class="slider-slide" data-slide="2" style="background-image: url('https://img.magnific.com/free-photo/healthy-young-asian-runner-woman-warm-up-body-stretching-before-exercise_7861-1084.jpg?semt=ais_hybrid&w=740&q=80');">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate-slide-in-left">Holistic Wellness</h1>
+                        <p class="hero-subtitle animate-slide-in-right">Natural healing for body, mind, and soul</p>
+                        <button class="hero-button animate-pulse-glow" onclick="openBookingModal()">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+            <div class="scroll-indicator animate-bounce">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- News Ticker - Only on Homepage -->
+        <div class="news-ticker-wrapper">
+            <div class="news-ticker">
+                <div class="news-content">
+                    <span class="news-item">🌿 Open Daily: 8:00 AM - 6:00 PM | Mon-Sat | 🌿 Special Offer: 20% off on first booking | 🌿 Authentic Ayurveda Treatment Available Worldwide | 🌿 Natural Healing Since 200 Years</span>
+                    <span class="news-item">🌿 Open Daily: 8:00 AM - 6:00 PM | Mon-Sat | 🌿 Special Offer: 20% off on first booking | 🌿 Authentic Ayurveda Treatment Available Worldwide | 🌿 Natural Healing Since 200 Years</span>
+                    <span class="news-item">🌿 Open Daily: 8:00 AM - 6:00 PM | Mon-Sat | 🌿 Special Offer: 20% off on first booking | 🌿 Authentic Ayurveda Treatment Available Worldwide | 🌿 Natural Healing Since 200 Years</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-content">
+                    <p class="about-text">
+Sethsuwa Pranajeewa medicine is the most sought after product at Sethsuwa Hospital. It is used both in Sri Lanka and the world over. It was the Buddhist monk Venerable Waga Gnanaloka thero who first treated his hundreds of patients with his traditional medicine, obtained from his Ola leaf inscriptions passed down from generations. The monk at eighty years looked forty, more important was the fact that he led a very active life, waking up at 4.30 a.m., he devoted the early hours of the morning paying reverence for the Lord Buddha. The hours that followed were spent in compassionate treatment by this doctor monk.
+<br><br>
+Hundreds gathered at the Sethsuwa Ayurveda Hospital, then called Veda Madura (Ayurveda House) where an initial spoonful of SEthsuwa Pranajeewa was administered to every patient. News reached far and wide, allover the country of the tremendous relief that followed the initial administration of the first tablespoon of Pranajeewa.
+
+His only understudy was Dr. Sujeewa Vithanage a young doctor with a medical degree from the University of Colombo (BAMS) who was engaged in extensive research into the ancient system of medicine. Together they made the miraculous Sethsuwa Pranajeewa medicine in cauldrons and from Venerable Waga Gnanaloka, it was his young understudy Dr. Sujeewa , who thereafter began to make this ancient recipe from the ola leaves which date back to over 200 years. During those days , perhaps for over 200 years Sethsuwa Pranajeewa was the only cure for villagers afflicted with different ailments and they experienced relief. Thus, it became their only cure of the grandfathers, of the fathers and of the children of their children thereafter.
+
+There are hundreds of users of Sethsuwa Pranajeewa medicine in the United Kingdom, USA and othe parts of the world. They all have their pleasant experiences to relate with Sethsuwa Pranajeewa medicine and its miraculous properties, but the most heartening of them all comes from an American doctor who says that he had a problem with prostrate cancer and had to have surgery, At first the PSA readings had looked great, but there arose a new problem of his PSA reading doubling every three months. It was then required that he takes radiation treatment and took Sethsuwa Pranajeewa medicine too.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="py-20 px-4 bg-white">
+            <div class="container mx-auto">
+                <h2 class="section-title">Our Location</h2>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56024.16226185628!2d79.88119800297447!3d6.953638119855819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257ce81120163%3A0x86586a76f93c2165!2sSethsuwa%20Ayurweda%20Hospital!5e1!3m2!1sen!2slk!4v1781223278274!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Treatments Page View -->
+    <section id="treatments-view" class="page-view">
+        <section id="treatments" class="relative py-20 px-4">
+            <div class="container mx-auto">
+                <div class="back-button-container">
+                    <button class="back-button" onclick="navigateTo('home')">← Back to Home</button>
+                </div>
+                <h2 class="section-title">Our Treatments</h2>
+                
+                <!-- Search & Filter -->
+                <div class="search-filter-container">
+                    <input type="text" id="search-input" placeholder="Search treatments..." class="search-input" onkeyup="searchTreatments()">
+                    <select id="category-filter" class="category-filter" onchange="filterTreatments()">
+                        <option value="all">All Categories</option>
+                        <option value="clinic">Clinic</option>
+                        <option value="wellness treatment">Wellness Treatment</option>
+                        <option value="sport massage therapy">Sport Massage Therapy</option>
+                        <option value="beauty treatment">Beauty Treatment</option>
+                    </select>
+                </div>
+
+                <!-- Treatments Grid -->
+                <div id="treatments-grid" class="treatments-grid">
+                    <!-- Dynamic content loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Treatment Details Page View -->
+    <section id="treatment-details-view" class="page-view">
+        <section id="treatment-details" class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <div class="back-button-container">
+                    <button class="back-button" onclick="navigateTo('treatments')">← Back to Treatments</button>
+                </div>
+                <div id="treatment-details-content">
+                    <!-- Dynamic content loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- About Page View - Dedicated Standalone Page -->
+    <section id="about-view" class="page-view">
+        <!-- About Hero Banner -->
+        <section class="about-hero py-20 px-4 bg-white">
+            <div class="container mx-auto text-center">
+                <div class="back-button-container">
+                    <button class="back-button" onclick="navigateTo('home')">← Back to Home</button>
+                </div>
+                <h1 class="about-hero-title">Discover Our Journey into Holistic Wellness</h1>
+                <p class="about-hero-subtitle">Ancient Wisdom, Modern Healing</p>
+            </div>
+        </section>
+
+        <!-- Core Story Section -->
+        <section class="py-20 px-4 bg-gray-50">
+            <div class="container mx-auto max-w-6xl">
+                <div class="about-core-grid">
+                    <!-- Left: Spa Wellness Image -->
+                    <div class="about-image-container">
+                        <img src="https://www.pranajeewa.lk/assets/images/whatsapp-image-2023-12-27-at-16.20.31-fd8f2666.jpg" alt="Ayurvedic Spa Wellness" class="about-wellness-image">
+                    </div>
+                    
+                    <!-- Right: Our Story -->
+                    <div class="about-story-container">
+                        <p class="about-story-text">
+Sethsuwa Pranajeewa medicine is the most sought after product at Sethsuwa Hospital. It is used both in Sri Lanka and the world over. It was the Buddhist monk Venerable Waga Gnanaloka thero who first treated his hundreds of patients with his traditional medicine, obtained from his Ola leaf inscriptions passed down from generations. The monk at eighty years looked forty, more important was the fact that he led a very active life, waking up at 4.30 a.m., he devoted the early hours of the morning paying reverence for the Lord Buddha. The hours that followed were spent in compassionate treatment by this doctor monk.
+
+Hundreds gathered at the Sethsuwa Ayurveda Hospital, then called Veda Madura (Ayurveda House) where an initial spoonful of SEthsuwa Pranajeewa was administered to every patient. News reached far and wide, allover the country of the tremendous relief that followed the initial administration of the first tablespoon of Pranajeewa.
+
+His only understudy was Dr. Sujeewa Vithanage a young doctor with a medical degree from the University of Colombo (BAMS) who was engaged in extensive research into the ancient system of medicine. Together they made the miraculous Sethsuwa Pranajeewa medicine in cauldrons and from Venerable Waga Gnanaloka, it was his young understudy Dr. Sujeewa , who thereafter began to make this ancient recipe from the ola leaves which date back to over 200 years. During those days , perhaps for over 200 years Sethsuwa Pranajeewa was the only cure for villagers afflicted with different ailments and they experienced relief. Thus, it became their only cure of the grandfathers, of the fathers and of the children of their children thereafter.
+
+There are hundreds of users of Sethsuwa Pranajeewa medicine in the United Kingdom, USA and othe parts of the world. They all have their pleasant experiences to relate with Sethsuwa Pranajeewa medicine and its miraculous properties, but the most heartening of them all comes from an American doctor who says that he had a problem with prostrate cancer and had to have surgery, At first the PSA readings had looked great, but there arose a new problem of his PSA reading doubling every three months. It was then required that he takes radiation treatment and took Sethsuwa Pranajeewa medicine too.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Core Values Section -->
+        <section class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <!-- Value 1: Authenticity -->
+                    <div class="value-card">
+                        <div class="value-icon">🕉️</div>
+                        <h3 class="value-title">Authenticity</h3>
+                        <p class="value-description">We strictly adhere to time-tested Ayurvedic principles and traditional techniques passed down through generations.</p>
+                    </div>
+                    
+                    <!-- Value 2: Natural Healing -->
+                    <div class="value-card">
+                        <div class="value-icon">🌿</div>
+                        <h3 class="value-title">Natural Healing</h3>
+                        <p class="value-description">We use only 100% natural herbs, essential oils, and organic ingredients. No harsh chemicals, ever.</p>
+                    </div>
+                    
+                    <!-- Value 3: Customer Care -->
+                    <div class="value-card">
+                        <div class="value-icon">💝</div>
+                        <h3 class="value-title">Customer Care</h3>
+                        <p class="value-description">Your well-being is our ultimate priority. Every treatment is customized by expert hands to match your unique bodily profile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Location Page View -->
+    <section id="location-view" class="page-view">
+        <section class="py-20 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <div class="back-button-container">
+                    <button class="back-button" onclick="navigateTo('home')">← Back to Home</button>
+                </div>
+                <h2 class="section-title">Our Location</h2>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56024.16226185628!2d79.88119800297447!3d6.953638119855819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257ce81120163%3A0x86586a76f93c2165!2sSethsuwa%20Ayurweda%20Hospital!5e1!3m2!1sen!2slk!4v1781223278274!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal-overlay hidden">
+        <div class="modal-content booking-modal-content">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <h3 class="booking-title">Book Your Treatment</h3>
+            <form id="booking-form" class="booking-form" onsubmit="submitBooking(event)">
+                <input type="hidden" id="selected-treatment">
+                <div class="form-group">
+                    <label for="user-name">Name</label>
+                    <input type="text" id="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-date">Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-time">Time</label>
+                    <input type="time" id="booking-time" required>
+                </div>
+                <button type="submit" class="booking-submit">Book via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Chat -->
+    <a href="https://wa.me/94781020385" target="_blank" class="floating-whatsapp animate-pulse-vibrate">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+    </a>
+
+    <!-- Premium Footer -->
+    <footer class="footer py-16 px-4 bg-primary text-white">
+        <div class="container mx-auto">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="footer-heading">Pranajeewa</h4>
+                    <p class="footer-about">Authentic Ayurvedic healing since 200 years. Traditional medicine for modern wellness.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="#" class="footer-link" onclick="navigateTo('home'); return false;">Home</a>
+                    <a href="#" class="footer-link" onclick="navigateTo('about'); return false;">About Us</a>
+                    <a href="#" class="footer-link" onclick="navigateTo('treatments'); return false;">Treatments</a>
+                    <a href="#" class="footer-link" onclick="navigateTo('location'); return false;">Location</a>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <p class="footer-contact">📍 Sethsuwa Ayurweda Hospital</p>
+                    <p class="footer-contact">📞 +94 78 102 0385</p>
+                    <p class="footer-contact">📧 info@pranajeewa.lk</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Connect With Us</h4>
+                    <div class="footer-social">
+                        <a href="https://web.facebook.com/pranajeewaoil/" target="_blank" class="social-icon facebook">f</a>
+                        <a href="https://www.instagram.com/p/DXYjelWE1dh/" target="_blank" class="social-icon instagram">ig</a>
+                        <a href="https://www.pranajeewa.lk/" target="_blank" class="social-icon website">🌐</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2026 pranajeewa. All rights reserved. | Developed by <a href="https://sitesnap.io" target="_blank" class="sitesnap-link">SiteSnap</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="treatments.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
