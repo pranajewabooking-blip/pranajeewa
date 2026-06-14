@@ -104,7 +104,8 @@ function capitalizeCategory(category) {
     return category.charAt(0).toUpperCase() + category.slice(1);
 }
 
-// Show treatment details in SPA page view
+
+// Show treatment details in SPA page view - Updated to display all new fields
 function showTreatmentDetails(id) {
     if (typeof getTreatmentById !== 'function') return;
     
@@ -115,20 +116,64 @@ function showTreatmentDetails(id) {
     if (!container) return;
 
     container.innerHTML = `
-        <img src="${treatment.image}" alt="${treatment.name}" class="treatment-details-image" loading="lazy">
-        <span class="treatment-details-category">${capitalizeCategory(treatment.category)}</span>
-        <h3 class="treatment-details-name">${treatment.name}</h3>
-        <p class="treatment-details-desc">${treatment.description}</p>
-        <h4 class="treatment-features-title">Key Features:</h4>
-        <ul class="treatment-details-features">
-            ${treatment.features ? treatment.features.map(feature => `<li>${feature}</li>`).join('') : ''}
-        </ul>
-        <button class="treatment-details-book-btn" onclick="openBookingForTreatment('${treatment.name}')">Book Now</button>
+        <div class="treatment-details-main" style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 30px;">
+            <img src="${treatment.image}" alt="${treatment.name}" class="treatment-details-image" loading="lazy" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px;">
+            
+            <div class="treatment-details-info">
+                <span class="treatment-details-category" style="display: inline-block; background: #fee2e2; color: #dc2626; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
+                    ${capitalizeCategory(treatment.category)}
+                </span>
+                <h3 class="treatment-details-name" style="font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: #1f2937;">${treatment.name}</h3>
+                
+                <div class="treatment-quick-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f9fafb; padding: 20px; border-radius: 12px; border: 1px solid #f3f4f6; margin-bottom: 25px;">
+                    <div>
+                        <span style="display: block; font-size: 0.8rem; text-transform: uppercase; color: #9ca3af; font-weight: 600; letter-spacing: 0.5px;">🕒 Duration</span>
+                        <span style="font-size: 1.2rem; font-weight: 600; color: #4b5563;">${treatment.duration || 'N/A'}</span>
+                    </div>
+                    <div>
+                        <span style="display: block; font-size: 0.8rem; text-transform: uppercase; color: #9ca3af; font-weight: 600; letter-spacing: 0.5px;">💰 Price</span>
+                        <span style="font-size: 1.2rem; font-weight: 700; color: #dc2626;">${treatment.price || 'N/A'}</span>
+                    </div>
+                </div>
+
+                <p class="treatment-details-desc" style="color: #4b5563; line-height: 1.7; font-size: 1rem; margin-bottom: 25px;">${treatment.description}</p>
+            </div>
+        </div>
+
+        <div class="treatment-details-extra" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; border-top: 1px solid #f3f4f6; padding-top: 25px;">
+            <div>
+                <h4 class="treatment-features-title" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #1f2937;">✨ Key Features:</h4>
+                <ul class="treatment-details-features" style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: #4b5563; padding-left: 0;">
+                    ${treatment.features ? treatment.features.map(feature => `<li style="display: flex; align-items: center; gap: 10px;">🔹 ${feature}</li>`).join('') : ''}
+                </ul>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div>
+                    <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #1f2937;">👤 Who is this for?</h4>
+                    <p style="background: #eff6ff; color: #1e40af; padding: 15px; border-radius: 8px; border: 1px solid #bfdbfe; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                        ${treatment.suitability || 'Suitable for all individuals.'}
+                    </p>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #1f2937;">⚙️ Treatment Process:</h4>
+                    <p style="background: #f0fdf4; color: #166534; padding: 15px; border-radius: 8px; border: 1px solid #bbf7d0; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin: 0;">
+                        ${treatment.process || 'Standard Consultation & Therapy.'}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #f3f4f6; padding-top: 30px;">
+            <button class="treatment-details-book-btn" onclick="openBookingForTreatment('${treatment.name}')" style="background: #dc2626; color: white; border: none; font-size: 1.1rem; font-weight: 700; padding: 15px 40px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                Book Appointment Now
+            </button>
+        </div>
     `;
     
     navigateTo('treatment-details');
 }
-
 // Open booking modal
 function openBookingModal() {
     const modal = document.getElementById('booking-modal');
@@ -170,7 +215,7 @@ function submitBooking(event) {
     const message = `🌿 *New Appointment Request* 🌿\n\n` +
                     `👤 *Name:* ${name}\n` +
                     `📞 *Phone:* ${phone}\n` +
-                    `📌 *Treatment:* ${treatment}\n` +
+                    `💆‍♂️ *Treatment:* ${treatment}\n` +
                     `📅 *Date:* ${date}\n` +
                     `🕒 *Time:* ${time}\n\n` +
                     `Please confirm availability. Thank you!`;
