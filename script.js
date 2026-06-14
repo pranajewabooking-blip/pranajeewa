@@ -105,7 +105,9 @@ function capitalizeCategory(category) {
 }
 
 
-// Show treatment details in SPA page view - Updated to display all new fields
+// Show treatment details with Image/Video toggle slider view
+// Show treatment details in SPA page view - Swipeable Image/Video Slider inside one box
+// Show treatment details in SPA page view - Swipeable Slider with Clickable Thumbnail Boxes
 function showTreatmentDetails(id) {
     if (typeof getTreatmentById !== 'function') return;
     
@@ -115,11 +117,49 @@ function showTreatmentDetails(id) {
     const container = document.getElementById('treatment-details-content');
     if (!container) return;
 
+    // වීඩියෝවක් තිබේ දැයි පරීක්ෂා කිරීම
+    const hasVideo = treatment.videoUrl ? true : false;
+    
+    // එකම බොක්ස් එකක් ඇතුළේ Image සහ Video ස්ලයිඩර් එකක් ලෙස සකස් කිරීම
+    let mediaBoxHTML = '';
+    if (hasVideo) {
+        mediaBoxHTML = `
+            <div class="treatment-media-slider-wrapper" style="width: 100%; margin-bottom: 15px;">
+                <div id="treatment-media-slider" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; width: 100%; max-height: 400px; border-radius: 12px; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    
+                    <div id="slide-item-1" style="flex: 0 0 100%; width: 100%; scroll-snap-align: start; position: relative;">
+                        <img src="${treatment.image}" alt="${treatment.name}" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                    </div>
+                    
+                    <div id="slide-item-2" style="flex: 0 0 100%; width: 100%; scroll-snap-align: start; position: relative; height: 400px;">
+                        <iframe width="100%" height="100%" src="${treatment.videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%;"></iframe>
+                    </div>
+                    
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 12px; margin-top: 12px;">
+                    <div id="thumb-box-1" onclick="scrollToMediaSlide(1)" style="width: 60px; height: 45px; border-radius: 6px; overflow: hidden; border: 2px solid #dc2626; cursor: pointer; transition: all 0.3s ease; opacity: 1;">
+                        <img src="${treatment.image}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    
+                    <div id="thumb-box-2" onclick="scrollToMediaSlide(2)" style="width: 60px; height: 45px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; opacity: 0.6; background: #1f2937; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <img src="${treatment.image}" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                        <span style="position: absolute; font-size: 1.2rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">▶️</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    } else {
+        // වීඩියෝ නැත්නම් සාමාන්‍ය පරිදි පින්තූරය විතරක් පෙන්වයි
+        mediaBoxHTML = `
+            <img src="${treatment.image}" alt="${treatment.name}" class="treatment-details-image" loading="lazy" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+        `;
+    }
+
     container.innerHTML = `
         <div class="treatment-details-main" style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 30px;">
-            <img src="${treatment.image}" alt="${treatment.name}" class="treatment-details-image" loading="lazy" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px;">
             
-            <div class="treatment-details-info">
+            ${mediaBoxHTML} <div class="treatment-details-info">
                 <span class="treatment-details-category" style="display: inline-block; background: #fee2e2; color: #dc2626; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
                     ${capitalizeCategory(treatment.category)}
                 </span>
@@ -172,7 +212,72 @@ function showTreatmentDetails(id) {
         </div>
     `;
     
+    // ස්වයිප් (Swipe) කරන විට යට තියෙන Mini Boxes වල active Borders මාරු වීමට සකස් කිරීම
+    if (hasVideo) {
+        setTimeout(() => {
+            const slider = document.getElementById('treatment-media-slider');
+            const thumb1 = document.getElementById('thumb-box-1');
+            const thumb2 = document.getElementById('thumb-box-2');
+            
+            if (slider && thumb1 && thumb2) {
+                slider.addEventListener('scroll', function() {
+                    const width = slider.clientWidth;
+                    if (slider.scrollLeft >= width / 2) {
+                        // වීඩියෝ එක උඩ ඉන්න විට වීඩියෝ thumbnail එක Highlight වේ
+                        thumb1.style.borderColor = 'transparent';
+                        thumb1.style.opacity = '0.6';
+                        thumb2.style.borderColor = '#dc2626';
+                        thumb2.style.opacity = '1';
+                    } else {
+                        // පින්තූරය උඩ ඉන්න විට පින්තූර thumbnail එක Highlight වේ
+                        thumb1.style.borderColor = '#dc2626';
+                        thumb1.style.opacity = '1';
+                        thumb2.style.borderColor = 'transparent';
+                        thumb2.style.opacity = '0.6';
+                    }
+                });
+            }
+        }, 100);
+    }
+    
     navigateTo('treatment-details');
+}
+
+// Mini Box ක්ලික් කළ විට Slider එක අදාළ තැනට Move කරවන Function එක
+function scrollToMediaSlide(slideNumber) {
+    const slider = document.getElementById('treatment-media-slider');
+    if (!slider) return;
+    
+    const width = slider.clientWidth;
+    if (slideNumber === 1) {
+        slider.scrollLeft = 0;
+    } else if (slideNumber === 2) {
+        slider.scrollLeft = width;
+    }
+}
+
+// Media toggle function (මෙය script.js හි ඕනෑම තැනක අලුතින් අමුණන්න)
+function toggleMediaSlide(type) {
+    const imgSlide = document.getElementById('media-image-slide');
+    const vidSlide = document.getElementById('media-video-slide');
+    const btnImg = document.getElementById('btn-show-image');
+    const btnVid = document.getElementById('btn-show-video');
+    
+    if (type === 'image') {
+        imgSlide.style.display = 'block';
+        vidSlide.style.display = 'none';
+        btnImg.style.background = '#dc2626';
+        btnVid.style.background = 'transparent';
+        
+        // වීඩියෝව නැවැත්වීමට (Reset src)
+        const iframe = vidSlide.querySelector('iframe');
+        if (iframe) iframe.src = iframe.src; 
+    } else {
+        imgSlide.style.display = 'none';
+        vidSlide.style.display = 'block';
+        btnImg.style.background = 'transparent';
+        btnVid.style.background = '#dc2626';
+    }
 }
 // Open booking modal
 function openBookingModal() {

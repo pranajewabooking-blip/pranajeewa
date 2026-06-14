@@ -1,4 +1,4 @@
-// Treatment Data Array - Updated with Duration, Price, Suitability and Process
+// Treatment Data Array - Updated with Duration, Price, Suitability, Process, and Video URLs
 const treatments = [
     {
         id: 1,
@@ -16,7 +16,8 @@ const treatments = [
         ],
         suitability: "Ideal for chronic fatigue, digestive disorders, stress accumulation, and full-body rejuvenation.",
         process: "Ayurvedic Consultation ➔ Deep Oil Massage (Oleation) ➔ Herbal Steam (Fomentation) ➔ Toxin Elimination.",
-        image: "https://media.istockphoto.com/id/491683745/photo/woman-having-massage-with-pouch.jpg?s=612x612&w=0&k=20&c=jS4YdtNA9ukNgE0f1euMd8GiMgrfYQ1i9KVMSfVhKJQ="
+        image: "https://media.istockphoto.com/id/491683745/photo/woman-having-massage-with-pouch.jpg?s=612x612&w=0&k=20&c=jS4YdtNA9ukNgE0f1euMd8GiMgrfYQ1i9KVMSfVhKJQ=",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ" // 👈 ඔයාගේ YouTube Embed ලින්ක් එක මෙතනට දාන්න
     },
     {
         id: 2,
@@ -34,7 +35,8 @@ const treatments = [
         ],
         suitability: "Recommended for high stress, muscle stiffness, insomnia, and dry skin conditions.",
         process: "Herbal Oil Selection ➔ Synchronized Full Body Massage ➔ Warm Towel Wipe / Steam.",
-        image: "https://t3.ftcdn.net/jpg/03/13/48/62/360_F_313486237_BNZ3rjW4LQtQSPn4OpZZIGfHiOedgPGi.jpg"
+        image: "https://t3.ftcdn.net/jpg/03/13/48/62/360_F_313486237_BNZ3rjW4LQtQSPn4OpZZIGfHiOedgPGi.jpg",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     },
     {
         id: 3,
@@ -52,7 +54,8 @@ const treatments = [
         ],
         suitability: "Perfect for athletes, gym-goers, individuals recovering from muscle sprains, or joint stiffness.",
         process: "Injury Assessment ➔ Target Specific Herbal Oil Therapy ➔ Controlled Deep Stretching.",
-        image: "https://greatermanchester.ac.uk//assets/Uploads/What-is-Sports-Rehabilitation-University-of-Bolton.jpg"
+        image: "https://greatermanchester.ac.uk//assets/Uploads/What-is-Sports-Rehabilitation-University-of-Bolton.jpg",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     },
     {
         id: 4,
@@ -70,7 +73,8 @@ const treatments = [
         ],
         suitability: "Suitable for dull skin, acne scars, uneven skin pigmentation, and general facial care.",
         process: "Natural Cleansing ➔ Gentle Herbal Scrub ➔ Steaming ➔ Nourishing Ayurvedic Face Pack.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtYLLiCBEXolbopgF0Ihd2MHhih0gAx__i9Yi2aIQ1WNdBEb_rv95i1dc&s=10"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtYLLiCBEXolbopgF0Ihd2MHhih0gAx__i9Yi2aIQ1WNdBEb_rv95i1dc&s=10",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     },
     {
         id: 5,
@@ -88,7 +92,8 @@ const treatments = [
         ],
         suitability: "Highly effective for severe headaches, migraines, high anxiety, and chronic sleep disorders.",
         process: "Head Massage ➔ Continuous Warm Oil Rhythmic Pouring ➔ Gentle Relaxation Rest.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzbroGWirmnKo-Wa1aelrZvXYGBvQcBYTimZegrNzC7-i35xOMAsy-XJEN&s=10"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzbroGWirmnKo-Wa1aelrZvXYGBvQcBYTimZegrNzC7-i35xOMAsy-XJEN&s=10",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     },
     {
         id: 6,
@@ -106,7 +111,8 @@ const treatments = [
         ],
         suitability: "Designed for individuals dealing with chronic back pain, stiff neck, or deep muscle knots.",
         process: "Tension Zone Identification ➔ Firm Deep Tissue Pressures ➔ Specialized Oil Treatment.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1cXe7bR8ZjGQZcXfeLdNCZ1CP4VBgYrE18M5aTOx2MOz5r-dxByKeLro&s=10"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1cXe7bR8ZjGQZcXfeLdNCZ1CP4VBgYrE18M5aTOx2MOz5r-dxByKeLro&s=10",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     },
     {
         id: 7,
@@ -124,7 +130,8 @@ const treatments = [
         ],
         suitability: "Great for body skin exfoliation, cellulites reduction, and natural skin hydration.",
         process: "Full Body Herbal Scrub ➔ Medicated Paste Application ➔ Eco Wrap ➔ Warm Shower.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lgPFe43kayX24nViihA80CUST8kLw5rfJfIZg55XOQ&s=10"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lgPFe43kayX24nViihA80CUST8kLw5rfJfIZg55XOQ&s=10",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     },
     {
         id: 8,
@@ -142,7 +149,8 @@ const treatments = [
         ],
         suitability: "Essential for anyone starting their healing journey or seeking organic medical advice.",
         process: "Nadi Pariksha (Pulse Reading) ➔ History Review ➔ Lifestyle & Diet Plan Creation.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ788oxnc-xSjmybR5oUmGS6dEsgmRzsZwRwtkhLH7b_A&s=10"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ788oxnc-xSjmybR5oUmGS6dEsgmRzsZwRwtkhLH7b_A&s=10",
+        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
     }
 ];
 
