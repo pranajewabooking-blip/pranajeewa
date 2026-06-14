@@ -658,88 +658,153 @@ p { font-size: 0.95rem; }
     border: 0;
 }
 
-/* About Page View - Dedicated Standalone Page */
-.about-hero {
-    padding-top: 100px;
-    text-align: center;
+/* ==========================================================================
+   PREMIUM ABOUT PAGE STYLES (MOBILE-FIRST LOCK COMPATIBLE)
+   ========================================================================== */
+   
+/* Premium Hero Banner Background styling */
+.about-premium-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 140px 20px 80px 20px; /* Header එකට යටින් ඉඩ තැබීම */
+    position: relative;
+    color: white;
 }
 
 .about-hero-title {
-    font-size: 2.5rem;
-    color: var(--primary);
-    font-weight: 800;
-    margin-bottom: 1rem;
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
 }
 
 .about-hero-subtitle {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1.3rem !important;
+    color: #ffe4e4 !important; /* Elegant light rose contrast tint */
+    font-weight: 500 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
-.about-core-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+/* Back Button Styles */
+.back-button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
-.about-image-container {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+.back-button:hover {
+    background: #ffffff;
+    color: var(--primary) !important;
+    transform: translateX(-3px);
 }
 
-.about-wellness-image {
+/* Content Main White Card for better reading look */
+.about-content-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+/* Image Wrapper Top */
+.about-main-img-wrapper {
     width: 100%;
-    height: 400px;
+    max-height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.about-premium-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.about-story-container {
-    padding: 1rem;
+/* Typography for Long Content Story Text */
+.story-main-heading {
+    color: #1e293b;
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 12px;
 }
 
-.about-story-text {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #333;
+.story-main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
 }
 
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.story-p {
+    font-size: 1.02rem !important;
+    line-height: 1.75 !important;
+    color: #475569 !important;
+    margin-bottom: 1.2rem !important;
+    text-align: justify;
 }
 
-.value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+/* Highlighted Callout Quote */
+.story-highlight-quote {
+    border-left: 4px solid var(--primary);
+    background: #fef2f2;
+    padding: 1.2rem 1.5rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #991b1b;
+    border-radius: 0 12px 12px 0;
+    font-weight: 500;
 }
 
-.value-card:hover {
-    transform: translateY(-10px);
-}
-
-.value-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.value-title {
-    font-size: 1.3rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.value-description {
-    color: #555;
-    line-height: 1.6;
-    font-size: 0.95rem;
+/* --- MOBILE RESPONSIVE TUNING --- */
+@media (max-width: 768px) {
+    .about-premium-hero {
+        padding: 110px 15px 50px 15px;
+    }
+    
+    .about-hero-title {
+        font-size: 1.8rem !important; /* Smaller on mobile to fit nicely */
+    }
+    
+    .about-hero-subtitle {
+        font-size: 1.05rem !important;
+    }
+    
+    .about-content-card {
+        padding: 1.2rem; /* Save space on mobile screens */
+        border-radius: 16px;
+    }
+    
+    .about-main-img-wrapper {
+        max-height: 240px; /* Compact image height on mobile view */
+        margin-bottom: 1.2rem;
+    }
+    
+    .story-main-heading {
+        font-size: 1.4rem;
+    }
+    
+    .story-p {
+        font-size: 0.96rem !important;
+        line-height: 1.65 !important;
+        text-align: left; /* Easier mobile reading */
+    }
 }
 
 /* Booking Modal */
