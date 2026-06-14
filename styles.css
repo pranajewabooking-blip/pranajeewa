@@ -12,11 +12,19 @@
     box-sizing: border-box;
 }
 
+/* 🌟 වෙබ් අඩවිය දෙපැත්තට ඇදීම (Overflow) සම්පූර්ණයෙන්ම ලොක් කිරීම */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* දකුණු පැත්තට කිසිම දෙයක් පිට පැනීම වළක්වයි */
+    position: relative;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    font-size: 0.95rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* */
+    line-height: 1.6; /* */
+    color: #333; /* */
+    font-size: 0.95rem; /* */
 }
 
 h1 { font-size: 2rem; }
@@ -68,14 +76,16 @@ p { font-size: 0.95rem; }
     gap: 12px;
 }
 
+/* Logo Styles - Updated to Times New Roman */
 .logo-text {
-    font-family: 'Dancing Script', 'Playfair Display', serif;
+    font-family: 'Times New Roman', Times, serif; /* මෙතැනින් ෆොන්ට් එක වෙනස් කළා */
     font-size: 1.6rem;
     font-weight: 700;
     background: linear-gradient(45deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: 0.5px; /* අකුරු තවත් ලස්සනට පෙනීමට */
 }
 
 /* Logo Bounce Animation */
@@ -180,13 +190,13 @@ p { font-size: 0.95rem; }
 }
 
 /* News Ticker - Only on Homepage */
+/* News Ticker Background Color Update to Yellow */
 .news-ticker-wrapper {
-    background: var(--primary);
-    width: 100%;
-    overflow: hidden;
-    height: 36px;
+    background: #ffd32a !important; /* Beautiful Vibrant Yellow */
+    border-bottom: 2px solid #e1b12c; /* Subtle darker gold border line */
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-
 .news-ticker {
     height: 100%;
     display: flex;
@@ -200,12 +210,10 @@ p { font-size: 0.95rem; }
 }
 
 .news-item {
-    display: inline-block;
-    padding: 0 2rem;
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 500;
-    flex-shrink: 0;
+    color: #1e272e !important; /* Dark Premium Charcoal for maximum readability */
+    font-weight: 600; /* Text bold කිරීම */
+    font-size: 0.92rem;
+    letter-spacing: 0.5px;
 }
 
 @keyframes tickerScroll {
@@ -265,35 +273,46 @@ p { font-size: 0.95rem; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.85);
+    /* සුදු පාට වෙනුවට පින්තූරය 60% ක් පැහැදිලිව පේන මෘදු අඳුරු Overlay එකක් දීම */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%) !important;
     z-index: 1;
 }
 
+/* Slider එක ඇතුළත ඇති අකුරු සහ බොත්තම් Overlay එකට උඩින් පෙනීමට */
 .hero-content {
-    text-align: center;
-    padding: 2rem;
-    max-width: 800px;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Overlay එකට උඩින් අකුරු තැබීම */
 }
 
+/* Hero Title එකේ Font Size එක ලොකු කිරීම */
+/* --- SLIDER FONTS COLOR UPDATE --- */
+
+/* ප්‍රධාන මාතෘකාව (Title) සුදු පැහැයට හැරවීම සහ Shadow එකක් දීම */
+/* --- HERO TITLE ABSOLUTE WHITE COLOR UPDATE --- */
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--primary);
-    font-weight: 800;
-    margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideInLeft 1s ease forwards;
+    color: #ffffff !important; /* Balavāgi beḷḷi baṇṇavannu nīḍalāgide */
+    font-size: 5.2rem !important; /* Tumba doddadāgi akṣaragaḷannu loku madi */
+    font-weight: 900 !important; /* Extra Bold - akṣara uparimayen ghanakam kirīma */
+    line-height: 1.1 !important;
+    margin-bottom: 2rem !important;
+    letter-spacing: -1px !important;
+    
+    /* Kaḷu pajahati 100% thada shadow ekak dīmen beḷḷi akṣara lassanata mathu fēna */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 
+                 0 0 25px rgba(0, 0, 0, 0.7) !important;
 }
-
+/* උපමාතෘකාව (Subtitle) ලස්සන රතු පැහැයට හැරවීම */
 .hero-subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-    color: #666;
-    margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateX(50px);
-    animation: slideInRight 1s ease forwards 0.3s;
+    color: #dfbd00 !important; /* Premium Eye-Catching Red (Tailwind Red-500) */
+    font-weight: 600 !important; /* අකුරු තවත් පැහැදිලිව කියවීමට Bold කිරීම */
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4) !important; /* රතු පැහැය මතු කර පෙන්වීමට මෘදු Shadow එකක් */
+}
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem !important; /* Mobile gæḷapena hōma dāḍa doddadāgi pramaṇaya */
+        line-height: 1.2 !important;
+        margin-bottom: 1.2rem !important;
+    }
 }
 
 .hero-button {
@@ -331,8 +350,8 @@ p { font-size: 0.95rem; }
 }
 
 @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
-    50% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
+    50% { box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
 }
 
 .slider-dots {
@@ -442,30 +461,6 @@ p { font-size: 0.95rem; }
 }
 
 /* Treatments Section */
-#treatments {
-    position: relative;
-    background-image: url('https://img.magnific.com/free-photo/zen-stones-sand-background-health-wellness-concept_53876-124303.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-#treatments::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.92);
-    z-index: 0;
-}
-
-#treatments > .container {
-    position: relative;
-    z-index: 1;
-}
-
 .search-filter-container {
     display: flex;
     gap: 15px;
@@ -513,8 +508,8 @@ p { font-size: 0.95rem; }
 }
 
 .treatment-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(220, 38, 38, 0.12);
 }
 
 .treatment-image {
@@ -821,7 +816,7 @@ p { font-size: 0.95rem; }
     margin-bottom: 8px;
     color: #333;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.9 tribe-rem;
 }
 
 .form-group input {
@@ -884,168 +879,529 @@ p { font-size: 0.95rem; }
     75% { transform: scale(1.1) rotate(-5deg); }
 }
 
-/* Premium Footer */
-.footer {
-    background: var(--primary);
+/* ==========================================================================
+   PREMIUM ANIMATED GRADIENT FOOTER
+   ========================================================================== */
+.premium-footer {
+    position: relative;
+    background: linear-gradient(135deg, #7f1d1d 0%, #450a0a 100%); /* Premium Dark Wine Gradient */
+    color: #ffffff;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
     margin-top: auto;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+/* Live Wave Animation CSS */
+.footer-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.footer-column {
-    text-align: center;
-}
-
-.footer-heading {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.wave-svg {
     position: relative;
-    padding-bottom: 8px;
+    display: block;
+    width: 100%;
+    height: 40px;
 }
 
-.footer-heading::after {
+/* Parallax movement for waves */
+.wave-parallax > use {
+    animation: move-wave 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.wave-parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.wave-parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.wave-parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.wave-parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+@keyframes move-wave {
+    0% { transform: translate3d(-90px,0,0); }
+    100% { transform: translate3d(85px,0,0); }
+}
+
+/* Layout Container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 5;
+}
+
+.footer-premium-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1.2fr;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+/* Typography & Headings */
+.footer-title-premium {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #ff8484, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.footer-subtitle-premium {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    color: #fca5a5;
+}
+
+.footer-subtitle-premium::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
+    bottom: -6px;
+    left: 0;
+    width: 35px;
     height: 2px;
-    background: white;
+    background: #ef4444;
+    box-shadow: 0 0 8px #ef4444;
 }
 
-.footer-about {
-    font-size: 0.88rem;
-    line-height: 1.6;
-    opacity: 0.9;
+.footer-about-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #f3f4f6;
+    opacity: 0.85;
 }
 
-.footer-link {
-    display: block;
-    color: white;
+/* Quick Links with Hover Effects */
+.premium-footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.premium-footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.p-footer-link {
+    color: #e5e7eb;
     text-decoration: none;
-    padding: 6px 0;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
+    font-size: 0.92rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
 }
 
-.footer-link:hover {
-    color: #fee2e2;
-    padding-left: 8px;
+.p-footer-link:hover {
+    color: #ffffff;
+    transform: translateX(6px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
-.footer-contact {
-    font-size: 0.9rem;
-    padding: 6px 0;
-    opacity: 0.9;
-}
-
-.footer-social {
+/* Contact Box Custom Styling */
+.p-contact-item {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 1.2rem;
 }
 
-.social-icon {
+.p-contact-icon {
+    font-size: 1.1rem;
+}
+
+.p-contact-item p {
+    font-size: 0.92rem;
+    color: #e5e7eb;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ORIGINAL SOCIAL ICONS WITH ORIGINAL BRAND BACKGROUND GLOW */
+.premium-social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    text-decoration: none;
-    font-size: 0.8rem;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.social-icon:hover {
-    background: white;
-    color: var(--primary);
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 1.5rem;
-    text-align: center;
-}
-
-.sitesnap-link {
     color: white;
-    text-decoration: underline;
-    font-weight: 500;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
 }
 
-.sitesnap-link:hover {
-    color: #fee2e2;
+/* Original Brand Colors & Glow Effects on Hover */
+.social-icon-btn.facebook:hover {
+    background: #1877F2; /* Facebook Official Blue */
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.6);
+    transform: translateY(-5px) scale(1.08);
 }
 
-.copyright {
+.social-icon-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Instagram Gradient */
+    box-shadow: 0 0 15px rgba(220, 39, 67, 0.6);
+    transform: translateY(-5px) scale(1.08);
+}
+
+.social-icon-btn.website:hover {
+    background: #00a8ff; /* Clean Web Blue */
+    box-shadow: 0 0 15px rgba(0, 168, 255, 0.6);
+    transform: translateY(-5px) scale(1.08);
+}
+
+/* Bottom Copyright Bar with glass border line */
+.footer-premium-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright-text, .developer-text {
     font-size: 0.88rem;
-    opacity: 0.9;
+    color: #d1d5db;
     margin: 0;
+    opacity: 0.8;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    body {
-        font-size: 0.9rem;
+.text-glow {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.premium-snap-link {
+    color: #fca5a5;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(252, 165, 165, 0.5);
+    transition: all 0.3s ease;
+}
+
+.premium-snap-link:hover {
+    color: #ffffff;
+    border-bottom-style: solid;
+    text-shadow: 0 0 8px rgba(252, 165, 165, 0.6);
+}
+
+/* RESPONSIVE DESIGN - MOBILE ADJUSTMENTS */
+@media (max-width: 992px) {
+    .footer-premium-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
     }
     
-    .hero-section {
-        margin-top: 60px;
+    .premium-footer {
+        padding-top: 5rem;
     }
-    
-    .search-filter-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .search-input,
-    .category-filter {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .footer-grid {
+}
+
+@media (max-width: 576px) {
+    .footer-premium-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
-    
-    .footer-column {
+
+    .footer-premium-bottom {
+        flex-direction: column;
         text-align: center;
     }
     
-    /* About Page Responsive */
-    .about-hero-title {
-        font-size: 1.8rem;
+    .footer-subtitle-premium::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
     
-    .about-core-grid {
-        grid-template-columns: 1fr;
+    .footer-brand-box, .footer-links-box, .footer-contact-box, .footer-social-box {
+        text-align: center;
+    }
+    
+    .premium-social-icons, .p-contact-item {
+        justify-content: center;
+    }
+}
+/* Custom Categories Section */
+.categories-section {
+    padding: 4rem 2rem;
+    background: #fff5f5; /* Light subtle premium background */
+}
+
+.categories-carousel-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.category-slide-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.05);
+    border: 1px solid rgba(220, 38, 38, 0.08);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.category-slide-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(220, 38, 38, 0.12);
+    border-color: var(--primary);
+}
+
+.category-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.category-slide-card:hover .category-card-icon {
+    transform: scale(1.15);
+}
+
+.category-card-title {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.category-card-text {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Mobile View Responsive - Horizontal Side Scrolling Carousel */
+@media (max-width: 768px) {
+    .categories-section {
+        padding: 3rem 1rem;
+    }
+
+    .categories-carousel-wrapper {
+        display: flex; /* Switches from Grid to Flexbox for side movement */
+        overflow-x: auto; /* Enables horizontal swipe */
+        scroll-snap-type: x mandatory; /* Stops exactly on a card when swiping */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; /* Extra smooth scroll on iOS */
+        gap: 1.2rem;
+        padding: 1rem 1.5rem;
+        margin-left: -1rem; /* Full-bleed layout effect */
+        margin-right: -1rem;
+    }
+
+    /* Hide standard scrollbars for clean premium look */
+    .categories-carousel-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    .categories-carousel-wrapper {
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+    }
+
+    .category-slide-card {
+        flex: 0 0 80%; /* Each card takes up 80% of the mobile screen width */
+        scroll-snap-align: center; /* Snap card to the center of the viewport */
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+}
+/* ==========================================================================
+   PREMIUM LOCATION PAGE STYLES (WITH MAP CARD)
+   ========================================================================== */
+.location-premium-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    align-items: start;
+}
+
+.location-info-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.location-detail-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-detail-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.05);
+}
+
+.highlight-loc-card {
+    background: linear-gradient(135deg, #fef2f2 0%, #ffe4e4 100%);
+    border-color: #fca5a5;
+}
+
+.loc-card-icon {
+    font-size: 1.8rem;
+    background: #fef2f2;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.highlight-loc-card .loc-card-icon {
+    background: var(--primary);
+    color: white;
+}
+
+.loc-card-content h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.loc-card-content p {
+    color: #475569;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.92rem;
+    color: #475569;
+    margin-bottom: 0.3rem;
+    gap: 1.5rem;
+}
+
+.loc-facilities-list {
+    list-style: none;
+    padding: 0;
+}
+
+.loc-facilities-list li {
+    font-size: 0.92rem;
+    color: #334155;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.loc-phone-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.loc-phone-link:hover {
+    color: var(--primary-dark);
+}
+
+/* --- PREMIUM MAP CARD STYLING --- */
+.map-card-premium {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.3s ease;
+}
+
+.map-card-premium:hover {
+    box-shadow: 0 20px 45px rgba(220, 38, 38, 0.08);
+}
+
+/* Beautiful Top Header for Map Card */
+.map-card-header {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.map-dot {
+    width: 10px;
+    height: 10px;
+    background: #22c55e; /* Live green pulsing indicator */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.map-header-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.map-wrapper-inner {
+    width: 100%;
+    height: 480px; /* Perfect height for desktop */
+}
+
+.map-wrapper-inner iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* RESPONSIVE DESIGN - MOBILE ADJUSTMENTS */
+@media (max-width: 992px) {
+    .location-premium-grid {
+        grid-template-columns: 1fr; /* Stack vertically on tablet/mobile */
         gap: 2rem;
     }
     
-    .about-wellness-image {
-        height: 280px;
+    .map-wrapper-inner {
+        height: 350px; /* Slightly shorter on mobile screens */
     }
-    
-    .values-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+}
+/* CSS styles අලුත් ID එකටත් සම්බන්ධ කිරීම */
+/* Location පේජ් එක Header එකට යටින් පටන් ගැනීම වැළැක්වීමට */
+#location-view {
+    padding-top: 120px !important; /* Header එකේ උස අනුව ඉඩක් ලබා දීම */
+}
+#location-view.active {
+    display: block !important; /* active වූ විට පමණක් පෙන්වන්න */
 }

@@ -130,8 +130,8 @@ function getTreatmentsByCategory(category) {
     return treatments.filter(treatment => treatment.category === category);
 }
 
-// Function to search treatments
-function searchTreatments(searchTerm) {
+// Renamed to avoid overlap/conflict with script.js search function
+function getTreatmentsBySearch(searchTerm) {
     const term = searchTerm.toLowerCase();
     return treatments.filter(treatment => 
         treatment.name.toLowerCase().includes(term) ||
