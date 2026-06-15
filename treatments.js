@@ -1,157 +1,282 @@
 // Treatment Data Array - Updated with Duration, Price, Suitability, Process, and Video URLs
 const treatments = [
+    
     {
         id: 1,
-        name: "Panchakarma Therapy",
+        name: "Full Body Massage (Abhyanga)",
         category: "clinic",
-        duration: "90 Mins",
-        price: "Rs. 7,500",
-        description: "A comprehensive Ayurvedic detoxification treatment that cleanses the body of toxins and balances the three doshas. This ancient therapy includes five therapeutic procedures to rejuvenate the body and mind.",
+        duration: "60 Mins",
+        price: "Rs. 5,000",
+        description: "A traditional Ayurvedic full body oil massage designed to relax the body, improve blood circulation, relieve muscle tension, and nourish the skin. This therapy reduces stress, fatigue, and body aches while promoting overall physical and mental wellbeing. Specially prepared herbal oils are selected according to each client's body constitution (Prakriti), health condition, and specific therapeutic needs.",
         features: [
-            "Complete body detoxification",
-            "Balances Vata, Pitta, and Kapha",
-            "Improves digestion and metabolism",
-            "Enhances mental clarity",
-            "Boosts immunity naturally"
+            "Personalized herbal oil selection",
+            "Deep muscle relaxation",
+            "Improves blood circulation",
+            "Reduces stress and anxiety",
+            "Nourishes skin and body tissues",
+            "Supports overall wellbeing"
         ],
-        suitability: "Ideal for chronic fatigue, digestive disorders, stress accumulation, and full-body rejuvenation.",
-        process: "Ayurvedic Consultation ➔ Deep Oil Massage (Oleation) ➔ Herbal Steam (Fomentation) ➔ Toxin Elimination.",
-        image: "https://media.istockphoto.com/id/491683745/photo/woman-having-massage-with-pouch.jpg?s=612x612&w=0&k=20&c=jS4YdtNA9ukNgE0f1euMd8GiMgrfYQ1i9KVMSfVhKJQ=",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ" // 👈 ඔයාගේ YouTube Embed ලින්ක් එක මෙතනට දාන්න
+        keyBenefits: [
+            "Deeply relaxes the nervous system",
+            "Improves skin texture and glow",
+            "Increases joint flexibility",
+            "Enhances body energy and vitality"
+        ],
+        suitability: "Recommended for stress, fatigue, insomnia, muscle stiffness, poor circulation, body pain, and general rejuvenation.",
+        process: "Ayurvedic Consultation ➔ Prakriti Assessment ➔ Customized Herbal Oil Selection ➔ Full Body Abhyanga Massage ➔ Post-Treatment Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 2,
-        name: "Abhyanga Massage",
-        category: "wellness treatment",
-        duration: "60 Mins",
-        price: "Rs. 5,000",
-        description: "Traditional warm oil massage therapy that nourishes the body and promotes deep relaxation. Uses specially prepared herbal oils to improve circulation and remove stress.",
+        name: "Full Body Massage with Steam",
+        category: "clinic",
+        duration: "75 Mins",
+        price: "Rs. 6,500",
+        description: "This treatment combines a full body Ayurvedic massage with herbal steam therapy. The steam opens the pores, promotes sweating, and helps remove toxins from the body while reducing stiffness, easing muscle tension, and improving circulation. It provides deep relaxation and supports the body's natural detoxification process.",
         features: [
-            "Full body warm oil massage",
-            "Reduces stress and anxiety",
-            "Improves skin complexion",
-            "Enhances lymphatic drainage",
-            "Promotes deep sleep"
+            "Full body Ayurvedic oil massage",
+            "Herbal steam therapy",
+            "Opens pores and promotes detoxification",
+            "Relieves muscle stiffness and tension",
+            "Improves blood circulation",
+            "Enhances relaxation and wellbeing"
         ],
-        suitability: "Recommended for high stress, muscle stiffness, insomnia, and dry skin conditions.",
-        process: "Herbal Oil Selection ➔ Synchronized Full Body Massage ➔ Warm Towel Wipe / Steam.",
-        image: "https://t3.ftcdn.net/jpg/03/13/48/62/360_F_313486237_BNZ3rjW4LQtQSPn4OpZZIGfHiOedgPGi.jpg",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
+        keyBenefits: [
+            "Effective removal of deep-seated toxins",
+            "Reduces localized muscle pain",
+            "Boosts lymphatic system",
+            "Promotes clear and healthy pores"
+        ],
+        suitability: "Recommended for muscle stiffness, body aches, poor circulation, stress, fatigue, and individuals seeking detoxification and relaxation.",
+        process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Post-Treatment Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 3,
-        name: "Sports Injury Rehabilitation",
-        category: "sport massage therapy",
-        duration: "75 Mins",
-        price: "Rs. 6,500",
-        description: "Specialized massage therapy for athletes and sports injury recovery. Combines deep tissue techniques with Ayurvedic oils to accelerate healing and restore mobility.",
+        name: "Full Package (Massage + Steam + Herbal Scrub + Herbal Bath)",
+        category: "clinic",
+        duration: "120 Mins",
+        price: "Rs. 12,000",
+        description: "A complete rejuvenation therapy that includes a full body Ayurvedic massage, herbal steam, herbal scrub, and herbal bath. This luxurious treatment deeply cleanses and exfoliates the skin, removes dead cells, improves blood circulation, promotes detoxification, and restores energy and vitality. We use our own specially formulated herbal oils and natural herbal preparations, carefully selected according to each client's body constitution, skin condition, and health concerns for maximum therapeutic benefit.",
         features: [
-            "Targeted muscle tension relief",
-            "Accelerated injury recovery",
-            "Improved flexibility",
-            "Reduced inflammation",
-            "Enhanced performance"
+            "Full body Ayurvedic oil massage",
+            "Herbal steam therapy",
+            "Natural herbal body scrub",
+            "Refreshing herbal bath",
+            "Deep skin cleansing and exfoliation",
+            "Improves blood circulation",
+            "Supports detoxification",
+            "Restores energy and vitality"
         ],
-        suitability: "Perfect for athletes, gym-goers, individuals recovering from muscle sprains, or joint stiffness.",
-        process: "Injury Assessment ➔ Target Specific Herbal Oil Therapy ➔ Controlled Deep Stretching.",
-        image: "https://greatermanchester.ac.uk//assets/Uploads/What-is-Sports-Rehabilitation-University-of-Bolton.jpg",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
+        keyBenefits: [
+            "Complete body transformation",
+            "Soft and rejuvenated skin",
+            "Intense relaxation and detoxification",
+            "Improved metabolic function"
+        ],
+        suitability: "Ideal for stress relief, fatigue, dull skin, poor circulation, toxin accumulation, body stiffness, and those seeking a complete wellness and rejuvenation experience.",
+        process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Herbal Scrub Application ➔ Herbal Bath ➔ Post-Treatment Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 4,
-        name: "Herbal Facial Treatment",
-        category: "beauty treatment",
-        duration: "45 Mins",
-        price: "Rs. 3,500",
-        description: "Natural facial therapy using organic herbs and plant extracts. Revitalizes skin, reduces wrinkles, and brings out your natural glow without harmful chemicals.",
+        name: "Shirodhara",
+        category: "clinic",
+        duration: "60 Mins",
+        price: "Rs. 8,000",
+        description: "Shirodhara is a classical Ayurvedic treatment where a steady, rhythmic stream of warm herbal oil or medicated liquid is gently poured over the 'third eye' area at the center of the forehead. This deeply relaxing therapy calms the nervous system, reduces stress and anxiety, improves sleep quality, relieves chronic headaches, and promotes mental clarity, emotional balance, and overall wellbeing.",
         features: [
-            "Organic herbal ingredients",
-            "Reduces signs of aging",
-            "Even skin tone",
-            "Deep pore cleansing",
-            "Natural radiance boost"
+            "Deep relaxation and mental calmness",
+            "Reduces stress and anxiety",
+            "Improves sleep quality and helps with insomnia",
+            "Relieves tension headaches and migraines",
+            "Enhances focus and mental clarity",
+            "Supports nervous system health",
+            "Promotes emotional balance",
+            "Stimulates vital Marma points"
         ],
-        suitability: "Suitable for dull skin, acne scars, uneven skin pigmentation, and general facial care.",
-        process: "Natural Cleansing ➔ Gentle Herbal Scrub ➔ Steaming ➔ Nourishing Ayurvedic Face Pack.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtYLLiCBEXolbopgF0Ihd2MHhih0gAx__i9Yi2aIQ1WNdBEb_rv95i1dc&s=10",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
+        keyBenefits: [
+            "Deep state of meditative relaxation",
+            "Balances the autonomic nervous system",
+            "Reduces hair fall due to stress",
+            "Improves cognitive function"
+        ],
+        suitability: "Recommended for stress, anxiety, insomnia, mental fatigue, chronic headaches, migraines, emotional imbalance, and individuals seeking deep mental relaxation and rejuvenation.",
+        process: "Ayurvedic Consultation ➔ Selection of Medicated Herbal Oil ➔ Gentle Forehead Oil Streaming (Shirodhara) ➔ Relaxation Therapy ➔ Post-Treatment Rest",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 5,
-        name: "Shirodhara",
-        category: "wellness treatment",
-        duration: "60 Mins",
-        price: "Rs. 8,000",
-        description: "Continuous pouring of warm herbal oil on the forehead to balance the nervous system. Known for treating stress, anxiety, and improving cognitive function.",
+        name: "Nasya Karma (Nasal Therapy)",
+        category: "clinic",
+        duration: "45 Mins",
+        price: "Rs. 6,500",
+        description: "Nasya Karma is one of the five principal detoxification therapies of Panchakarma. This specialized Ayurvedic treatment involves the administration of medicated oils, ghee, herbal juices, or powders through the nasal passages. Known as the 'gateway to the head,' the nose provides a direct pathway to the brain and sensory organs. Nasya helps eliminate accumulated toxins, nourish the nervous system, balance Vata and Kapha doshas, and support the health of the head, neck, and respiratory system.",
         features: [
-            "Mental relaxation and calm",
-            "Reduces anxiety and stress",
-            "Improves memory and focus",
-            "Better sleep quality",
-            "Nervous system balance"
+            "Detoxifies the head and sinus passages",
+            "Relieves sinus congestion and nasal blockage",
+            "Supports healthy breathing and respiratory function",
+            "Reduces headaches and migraines",
+            "Enhances memory and concentration",
+            "Nourishes the brain and nervous system",
+            "Promotes emotional balance and relaxation",
+            "Supports healthy hair growth and scalp health"
         ],
-        suitability: "Highly effective for severe headaches, migraines, high anxiety, and chronic sleep disorders.",
-        process: "Head Massage ➔ Continuous Warm Oil Rhythmic Pouring ➔ Gentle Relaxation Rest.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzbroGWirmnKo-Wa1aelrZvXYGBvQcBYTimZegrNzC7-i35xOMAsy-XJEN&s=10",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
+        keyBenefits: [
+            "Clearer sinuses and improved breathing",
+            "Sharper sensory perception",
+            "Reduction in recurring headaches",
+            "Better concentration and focus"
+        ],
+        suitability: "Recommended for chronic sinusitis, allergic rhinitis, migraines, recurrent headaches, nasal congestion, anxiety, stress-related disorders, sleep disturbances, hair fall, premature greying, and certain neurological conditions affecting the head and neck.",
+        process: "Ayurvedic Consultation ➔ Facial & Head Preparation ➔ Gentle Herbal Steam ➔ Administration of Medicated Herbal Oil Through Nasal Passages ➔ Therapeutic Massage ➔ Post-Treatment Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 6,
-        name: "Deep Tissue Sports Massage",
-        category: "sport massage therapy",
-        duration: "60 Mins",
-        price: "Rs. 5,500",
-        description: "Intensive massage therapy focusing on deeper muscle layers. Perfect for chronic pain relief and sports-related muscle tension.",
+        name: "Jalaukavacharana (Leech Therapy)",
+        category: "clinic",
+        duration: "45 Mins",
+        price: "Rs. 8,500",
+        description: "Jalaukavacharana is a specialized Ayurvedic bloodletting therapy (Raktamokshana) that utilizes medicinal leeches to remove impure or stagnant blood from affected areas. This traditional treatment is highly effective in reducing localized inflammation, pain, swelling, and congestion while helping to balance aggravated Pitta and Rakta doshas. The bioactive substances naturally released by medicinal leeches support improved circulation, detoxification, and tissue healing.",
         features: [
-            "Breaks down scar tissue",
-            "Relieves chronic muscle tension",
-            "Improves range of motion",
-            "Prevents injury recurrence",
-            "Enhances muscle recovery"
+            "Traditional Ayurvedic blood purification therapy",
+            "Reduces inflammation and swelling",
+            "Relieves localized pain and congestion",
+            "Improves blood circulation and microcirculation",
+            "Promotes wound and tissue healing",
+            "Supports detoxification of affected areas",
+            "Balances Pitta and Rakta doshas",
+            "Uses hygienically maintained medicinal leeches"
         ],
-        suitability: "Designed for individuals dealing with chronic back pain, stiff neck, or deep muscle knots.",
-        process: "Tension Zone Identification ➔ Firm Deep Tissue Pressures ➔ Specialized Oil Treatment.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1cXe7bR8ZjGQZcXfeLdNCZ1CP4VBgYrE18M5aTOx2MOz5r-dxByKeLro&s=10",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
+        keyBenefits: [
+            "Rapid reduction of localized inflammation",
+            "Accelerated healing of chronic skin lesions",
+            "Improvement in blood flow to damaged tissues",
+            "Natural pain relief"
+        ],
+        suitability: "Recommended for psoriasis, eczema, acne, varicose veins, chronic skin disorders, localized circulatory disturbances, non-healing ulcers, abscesses, inflammatory conditions, and certain joint disorders.",
+        process: "Ayurvedic Consultation ➔ Assessment of Condition ➔ Preparation of Treatment Area ➔ Application of Medicinal Leech ➔ Controlled Bloodletting Therapy ➔ Wound Care & Post-Treatment Monitoring",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 7,
-        name: "Herbal Body Wrap",
-        category: "beauty treatment",
-        duration: "75 Mins",
-        price: "Rs. 6,000",
-        description: "Detoxifying body wrap using natural herbs and clay. Removes toxins, hydrates skin, and promotes weight management naturally.",
+        name: "Agni Karma (Therapeutic Heat Cauterization)",
+        category: "clinic",
+        duration: "30 Mins",
+        price: "Rs. 7,500",
+        description: "Agni Karma is a classical Ayurvedic para-surgical procedure in which controlled therapeutic heat is applied to specific points of the body using a heated metallic instrument (Shalaka). This specialized treatment is highly effective for chronic pain, musculoskeletal disorders, corns, plantar fasciitis, and conditions associated with aggravated Vata and Kapha doshas. By delivering targeted heat to affected tissues, Agni Karma helps relieve pain, reduce stiffness, improve circulation, and stimulate the body's natural healing process.",
         features: [
-            "Full body detoxification",
-            "Skin hydration and nourishment",
-            "Temporary inch loss",
-            "Mineral rich formulation",
-            "Relaxing experience"
+            "Provides rapid and long-lasting pain relief",
+            "Reduces inflammation and swelling",
+            "Improves local blood circulation",
+            "Relieves stiffness and tenderness",
+            "Promotes natural tissue healing",
+            "Effective for corns and plantar fasciitis",
+            "Helps prevent recurrence of chronic conditions",
+            "Minimally invasive Ayurvedic para-surgical therapy"
         ],
-        suitability: "Great for body skin exfoliation, cellulites reduction, and natural skin hydration.",
-        process: "Full Body Herbal Scrub ➔ Medicated Paste Application ➔ Eco Wrap ➔ Warm Shower.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lgPFe43kayX24nViihA80CUST8kLw5rfJfIZg55XOQ&s=10",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
+        keyBenefits: [
+            "Immediate relief from chronic joint pain",
+            "Correction of musculoskeletal stiffness",
+            "Effective treatment for corns",
+            "Prevention of recurring pain"
+        ],
+        suitability: "Recommended for corns (Kadhara), plantar fasciitis, heel pain, calcaneal spur, osteoarthritis, sciatica, frozen shoulder, tennis elbow, cervical spondylosis, lumbar spondylosis, and chronic musculoskeletal pain conditions.",
+        process: "Ayurvedic Consultation ➔ Assessment of Affected Area ➔ Cleansing & Marking ➔ Controlled Therapeutic Heat Application (Agni Karma) ➔ Herbal Dressing ➔ Post-Treatment Care & Follow-Up",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
     },
     {
         id: 8,
-        name: "Consultation & Diagnosis",
-        category: "clinic",
-        duration: "30 Mins",
-        price: "Rs. 1,500",
-        description: "Personalized Ayurvedic consultation with expert physicians. Includes pulse diagnosis, dosha analysis, and customized treatment recommendations.",
+        name: "Ayurvedic Facial Treatment",
+        category: "beauty",
+        duration: "75 Mins",
+        price: "Rs. 6,000",
+        description: "An Ayurvedic Facial Treatment is a natural and holistic skincare therapy based on the principles of Ayurveda. Designed to enhance both outer beauty and inner wellbeing, this treatment combines herbal cleansing, exfoliation, steam therapy, facial massage, and nourishing herbal masks to rejuvenate the skin naturally. Customized according to each individual's Dosha (Vata, Pitta, or Kapha), the treatment helps restore balance, improve skin health, promote relaxation, and reveal a radiant natural glow.",
         features: [
-            "Complete dosha analysis",
-            "Personalized treatment plan",
-            "Pulse diagnosis method",
-            "Dietary recommendations",
-            "Lifestyle modifications"
+            "Personalized according to Dosha type",
+            "Deep herbal cleansing and detoxification",
+            "Gentle natural exfoliation",
+            "Herbal steam therapy for pore purification",
+            "Relaxing Ayurvedic facial massage",
+            "Customized herbal face mask",
+            "Natural toning and moisturizing",
+            "Promotes healthy, radiant skin"
         ],
-        suitability: "Essential for anyone starting their healing journey or seeking organic medical advice.",
-        process: "Nadi Pariksha (Pulse Reading) ➔ History Review ➔ Lifestyle & Diet Plan Creation.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ788oxnc-xSjmybR5oUmGS6dEsgmRzsZwRwtkhLH7b_A&s=10",
-        videoUrl: "https://www.youtube.com/embed/-nF0O8z-iBE?si=W2_ob1fde9pnEcqZ"
-    }
+        keyBenefits: [
+            "Natural, chemical-free glow",
+            "Balanced skin oil production",
+            "Reduced signs of skin aging",
+            "Deeply hydrated and supple skin"
+        ],
+        suitability: "Suitable for dry skin, oily skin, sensitive skin, dull complexion, uneven skin texture, stress-related skin concerns, and individuals seeking natural skin rejuvenation and relaxation.",
+        process: "Skin Assessment & Dosha Analysis ➔ Herbal Cleansing ➔ Natural Exfoliation ➔ Herbal Steam Therapy ➔ Ayurvedic Facial Massage ➔ Customized Herbal Face Mask ➔ Toning & Moisturizing ➔ Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+    },
+    {
+        id: 9,
+        name: "Ayurvedic Pedicure Treatment",
+        category: "beauty",
+        duration: "75 Mins",
+        price: "Rs. 5,500",
+        description: "An Ayurvedic Pedicure Treatment is a therapeutic foot care ritual inspired by the ancient healing principles of Ayurveda. More than a cosmetic treatment, it is a holistic wellness therapy that cleanses, softens, nourishes, and revitalizes the feet while promoting relaxation and restoring inner balance. Using herbal soaks, natural exfoliation, medicinal oils, and therapeutic massage techniques, this treatment improves circulation, relieves foot fatigue, and supports overall wellbeing.",
+        features: [
+            "Relaxing herbal foot soak",
+            "Natural exfoliation for rough skin and heels",
+            "Professional nail and cuticle care",
+            "Ayurvedic foot massage with herbal oils",
+            "Hydrating herbal mask or foot pack",
+            "Improves circulation and foot comfort",
+            "Relieves fatigue and tension",
+            "Deeply nourishes and softens the skin"
+        ],
+        keyBenefits: [
+            "Soft, smooth heels and feet",
+            "Reduced swelling and foot fatigue",
+            "Improved blood circulation in lower limbs",
+            "Complete stress relief through feet"
+        ],
+        suitability: "Suitable for dry or cracked heels, tired feet, poor circulation, foot fatigue, rough skin, stress-related tension, and individuals seeking relaxation and natural foot care.",
+        process: "Foot Assessment ➔ Herbal Foot Soak ➔ Natural Exfoliation ➔ Nail & Cuticle Care ➔ Ayurvedic Foot Massage ➔ Herbal Foot Mask ➔ Moisturizing & Finishing Treatment",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+    },
+    {
+    id: 10,
+    name: "Ayurvedic Fat Burning Therapy",
+    category: "clinic",
+    duration: "45 Mins",
+    price: "Rs. 7,000",
+    description: "Rooted in the timeless wisdom of Ayurveda, our Abdominal Fat Reduction Therapy is thoughtfully designed to support natural body contouring and metabolic balance. This specialized treatment utilizes a unique blend of potent herbal powders enriched with Lekhana Guna — the Ayurvedic “scraping” property known for its ability to break down and eliminate accumulated fat and toxins from the body. Through carefully selected herbs and therapeutic application techniques, the treatment targets excess subcutaneous abdominal fat while stimulating circulation and enhancing the body’s natural detoxification process. In Ayurveda, Lekhana Guna is renowned for its capacity to reduce Meda Dhatu (adipose tissue), balance aggravated Kapha Dosha, and cleanse blocked bodily channels.",
+    features: [
+        "Uses potent herbal powders with Lekhana Guna",
+        "Targets excess subcutaneous abdominal fat",
+        "Balances aggravated Kapha Dosha",
+        "Cleanses blocked bodily channels",
+        "Stimulates healthy metabolic rate",
+        "Promotes natural body contouring"
+    ],
+    keyBenefits: [
+        "Supports reduction of abdominal fat deposits",
+        "Helps improve body contour and firmness",
+        "Assists in removing accumulated toxins (Ama)",
+        "Encourages healthy metabolism and circulation",
+        "Promotes lightness and vitality"
+    ],
+    suitability: "Recommended for individuals seeking natural weight management, abdominal fat reduction, metabolic balancing, and detoxification.",
+    process: "Ayurvedic Consultation ➔ Dosha & Meda Dhatu Assessment ➔ Application of Herbal Lekhana Powders ➔ Therapeutic Scraping Massage ➔ Post-Treatment Relaxation",
+    image: "YOUR_IMAGE_URL_HERE",
+    videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+},
+
 ];
 
 // Function to get all treatments

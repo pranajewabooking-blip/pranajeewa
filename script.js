@@ -163,7 +163,7 @@ function showTreatmentDetails(id) {
                 <span class="treatment-details-category" style="display: inline-block; background: #fee2e2; color: #dc2626; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
                     ${capitalizeCategory(treatment.category)}
                 </span>
-                <h3 class="treatment-details-name" style="font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: #1f2937;">${treatment.name}</h3>
+                <h3 class="treatment-details-name" style="font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: #1f2937;">${treatment.name}</h3>
                 
                 <div class="treatment-quick-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f9fafb; padding: 20px; border-radius: 12px; border: 1px solid #f3f4f6; margin-bottom: 25px;">
                     <div>
@@ -187,6 +187,12 @@ function showTreatmentDetails(id) {
                     ${treatment.features ? treatment.features.map(feature => `<li style="display: flex; align-items: center; gap: 10px;">🔹 ${feature}</li>`).join('') : ''}
                 </ul>
             </div>
+            <div>
+    <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #1f2937;">🌟 Key Benefits:</h4>
+    <ul class="treatment-details-benefits" style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: #065f46; padding-left: 0;">
+        ${treatment.keyBenefits ? treatment.keyBenefits.map(benefit => `<li style="display: flex; align-items: center; gap: 10px; background: #ecfdf5; padding: 10px; border-radius: 8px;">✅ ${benefit}</li>`).join('') : '<li style="color: #6b7280;">Benefits coming soon.</li>'}
+    </ul>
+</div>
             
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div>
