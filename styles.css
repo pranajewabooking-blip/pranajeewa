@@ -291,8 +291,8 @@ p { font-size: 0.95rem; }
 /* --- HERO TITLE ABSOLUTE WHITE COLOR UPDATE --- */
 .hero-title {
     color: #ffffff !important; /* Balavāgi beḷḷi baṇṇavannu nīḍalāgide */
-    font-size: 5.2rem !important; /* Tumba doddadāgi akṣaragaḷannu loku madi */
-    font-weight: 900 !important; /* Extra Bold - akṣara uparimayen ghanakam kirīma */
+    font-size: 2.2rem !important; /* Tumba doddadāgi akṣaragaḷannu loku madi */
+    font-weight: 700 !important; /* Extra Bold - akṣara uparimayen ghanakam kirīma */
     line-height: 1.1 !important;
     margin-bottom: 2rem !important;
     letter-spacing: -1px !important;
@@ -454,7 +454,7 @@ p { font-size: 0.95rem; }
 }
 
 .about-text {
-    font-size: 0.95rem;
+    font-size: 0.83rem;
     line-height: 1.8;
     color: #222;
     font-weight: 400;
@@ -753,7 +753,7 @@ p { font-size: 0.95rem; }
 }
 
 .story-p {
-    font-size: 1.02rem !important;
+    font-size: 0.83rem !important;
     line-height: 1.75 !important;
     color: #475569 !important;
     margin-bottom: 1.2rem !important;
@@ -766,7 +766,7 @@ p { font-size: 0.95rem; }
     background: #fef2f2;
     padding: 1.2rem 1.5rem;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 0.83rem;
     color: #991b1b;
     border-radius: 0 12px 12px 0;
     font-weight: 500;
@@ -1007,7 +1007,7 @@ p { font-size: 0.95rem; }
 /* Typography & Headings */
 .footer-title-premium {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 1px;
     background: linear-gradient(45deg, #ff8484, #ffffff);
