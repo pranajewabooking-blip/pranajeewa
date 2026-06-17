@@ -196,7 +196,10 @@ p { font-size: 0.95rem; }
     border-bottom: 2px solid #e1b12c; /* Subtle darker gold border line */
     padding: 10px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* screen එකෙන් පිටතට යන කොටස හංගන්න (අනිවාර්යයි) */
+    width: 100%;
 }
+
 .news-ticker {
     height: 100%;
     display: flex;
@@ -206,7 +209,9 @@ p { font-size: 0.95rem; }
 .news-content {
     display: flex;
     white-space: nowrap;
-    animation: tickerScroll 30s linear infinite;
+    /* තත්පර 40ක් දැම්මා text දිග නිසා කියවන්න ලේසි වෙන්න, ඕනනම් අඩු වැඩි කරන්න */
+    animation: tickerScroll 40s linear infinite; 
+    gap: 50px; /* span අතර ලස්සන පරතරයක් තියාගන්න */
 }
 
 .news-item {
@@ -216,9 +221,14 @@ p { font-size: 0.95rem; }
     letter-spacing: 0.5px;
 }
 
+/* Animation එක ක්‍රියාත්මක වන ආකාරය (අලුතින්ම එකතු කරා) */
 @keyframes tickerScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100% / 3)); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Text සෙට් එකෙන් බාගයක් (පළමු වටය) ඉවර වෙනකොටම මුලට යනවා */
+    }
 }
 
 /* Hero Section */
