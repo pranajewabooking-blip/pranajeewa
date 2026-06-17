@@ -184,6 +184,383 @@ p { font-size: 0.95rem; }
     font-size: 0.95rem;
 }
 
+/* ==========================================================================
+   PREMIUM SIGNATURE TREATMENT SECTION (Homepage Featured Card)
+   ========================================================================== */
+.signature-treatment-section {
+    position: relative;
+    padding: 5rem 1rem;
+    background: linear-gradient(135deg, #fff5f5 0%, #fff 40%, #fef2f2 100%);
+    overflow: hidden;
+}
+
+/* Decorative Ayurvedic Background Pattern */
+.signature-treatment-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(220, 38, 38, 0.03) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(220, 38, 38, 0.02) 40px, rgba(220, 38, 38, 0.02) 41px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Decorative mandala-like circles */
+.signature-treatment-section::after {
+    content: '🕉';
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 6rem;
+    opacity: 0.04;
+    transform: rotate(15deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.signature-treatment-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.signature-treatment-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 28px;
+    padding: 3rem 3.5rem;
+    box-shadow: 
+        0 20px 60px rgba(220, 38, 38, 0.08),
+        0 8px 20px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(220, 38, 38, 0.12);
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+    
+    /* Glowing border animation */
+    animation: signatureGlow 3s ease-in-out infinite;
+}
+
+@keyframes signatureGlow {
+    0%, 100% {
+        box-shadow: 
+            0 20px 60px rgba(220, 38, 38, 0.08),
+            0 0 0 1px rgba(220, 38, 38, 0.1),
+            0 8px 20px rgba(0, 0, 0, 0.04);
+    }
+    50% {
+        box-shadow: 
+            0 20px 60px rgba(220, 38, 38, 0.15),
+            0 0 0 2px rgba(220, 38, 38, 0.2),
+            0 8px 30px rgba(220, 38, 38, 0.1);
+    }
+}
+
+.signature-treatment-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 
+        0 30px 80px rgba(220, 38, 38, 0.12),
+        0 0 0 2px rgba(220, 38, 38, 0.2),
+        0 10px 40px rgba(220, 38, 38, 0.08);
+}
+
+/* Inner glass shine overlay */
+.signature-treatment-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.signature-treatment-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.signature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+    position: relative;
+    z-index: 1;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3); }
+    50% { box-shadow: 0 4px 25px rgba(220, 38, 38, 0.5); }
+}
+
+.signature-treatment-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.signature-treatment-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.signature-treatment-title .highlight-red {
+    color: #dc2626;
+}
+
+.signature-treatment-desc {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.signature-features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.signature-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #374151;
+    font-weight: 500;
+    padding: 6px 0;
+}
+
+.signature-features-list li .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #fef2f2;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.signature-book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+}
+
+.signature-book-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+    background: linear-gradient(135deg, #b91c1c, #991b1b);
+}
+
+.signature-book-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.signature-book-btn .btn-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.signature-book-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Right side - Visual icon display */
+.signature-visual-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.signature-icon-display {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #fef2f2, #fff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    box-shadow: 
+        0 20px 50px rgba(220, 38, 38, 0.1),
+        inset 0 -5px 20px rgba(220, 38, 38, 0.05);
+    border: 2px solid rgba(220, 38, 38, 0.1);
+    position: relative;
+    animation: signatureFloat 4s ease-in-out infinite;
+}
+
+@keyframes signatureFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.02); }
+}
+
+/* Floating decorative elements around the icon */
+.signature-icon-display::before {
+    content: '🌿';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 1.8rem;
+    animation: floatLeaf 3s ease-in-out infinite;
+}
+
+.signature-icon-display::after {
+    content: '✨';
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    font-size: 1.5rem;
+    animation: floatLeaf 3s ease-in-out infinite 1s;
+}
+
+@keyframes floatLeaf {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(10deg); }
+}
+
+/* Premium entrance animation */
+.signature-treatment-card.animate-in {
+    animation: signatureEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes signatureEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .signature-treatment-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .signature-treatment-card {
+        padding: 2rem 1.8rem;
+    }
+    
+    .signature-treatment-title {
+        font-size: 1.6rem;
+    }
+    
+    .signature-visual-side {
+        order: -1;
+    }
+    
+    .signature-icon-display {
+        width: 140px;
+        height: 140px;
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .signature-treatment-section {
+        padding: 3rem 0.8rem;
+    }
+    
+    .signature-treatment-card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .signature-treatment-title {
+        font-size: 1.3rem;
+    }
+    
+    .signature-features-list {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+    
+    .signature-book-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .signature-icon-display {
+        width: 110px;
+        height: 110px;
+        font-size: 2.8rem;
+    }
+    
+    .signature-badge {
+        font-size: 0.78rem;
+        padding: 6px 14px;
+    }
+}
+
 .mobile-nav-link:hover {
     background: #fef2f2;
     color: var(--primary);

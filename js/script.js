@@ -480,6 +480,20 @@ function initScrollAnimations() {
     document.querySelectorAll('.value-card, .section-title, .about-content').forEach(el => {
         observer.observe(el);
     });
+
+    // Signature treatment card entrance animation
+    const signatureCard = document.getElementById('signature-card');
+    if (signatureCard) {
+        const sigObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    sigObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sigObserver.observe(signatureCard);
+    }
 }
 
 // Close modals on escape key
