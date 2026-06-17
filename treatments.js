@@ -1,8 +1,61 @@
 // Treatment Data Array - Updated with Duration, Price, Suitability, Process, and Video URLs
 const treatments = [
-    
     {
         id: 1,
+        name: "Full Package (Massage + Steam + Herbal Scrub + Herbal Bath)",
+        category: "wellness treatment",
+        duration: "180 Mins",
+        price: "Rs. 6,500",
+        description: "A complete rejuvenation therapy that includes a full body Ayurvedic massage, herbal steam, herbal scrub, and herbal bath. This luxurious treatment deeply cleanses and exfoliates the skin, removes dead cells, improves blood circulation, promotes detoxification, and restores energy and vitality. We use our own specially formulated herbal oils and natural herbal preparations, carefully selected according to each client's body constitution, skin condition, and health concerns for maximum therapeutic benefit.",
+        features: [
+            "Full body Ayurvedic oil massage",
+            "Herbal steam therapy",
+            "Natural herbal body scrub",
+            "Refreshing herbal bath",
+            "Deep skin cleansing and exfoliation",
+            "Improves blood circulation",
+            "Supports detoxification",
+            "Restores energy and vitality"
+        ],
+        keyBenefits: [
+            "Complete body transformation",
+            "Soft and rejuvenated skin",
+            "Intense relaxation and detoxification",
+            "Improved metabolic function"
+        ],
+        suitability: "Ideal for stress relief, fatigue, dull skin, poor circulation, toxin accumulation, body stiffness, and those seeking a complete wellness and rejuvenation experience.",
+        process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Herbal Scrub Application ➔ Herbal Bath ➔ Post-Treatment Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+    },
+    {
+        id: 2,
+        name: "Full Body Massage with Steam",
+        category: "wellness treatment",
+        duration: "75 Mins",
+        price: "Rs. 6,500",
+        description: "This treatment combines a full body Ayurvedic massage with herbal steam therapy. The steam opens the pores, promotes sweating, and helps remove toxins from the body while reducing stiffness, easing muscle tension, and improving circulation. It provides deep relaxation and supports the body's natural detoxification process.",
+        features: [
+            "Full body Ayurvedic oil massage",
+            "Herbal steam therapy",
+            "Opens pores and promotes detoxification",
+            "Relieves muscle stiffness and tension",
+            "Improves blood circulation",
+            "Enhances relaxation and wellbeing"
+        ],
+        keyBenefits: [
+            "Effective removal of deep-seated toxins",
+            "Reduces localized muscle pain",
+            "Boosts lymphatic system",
+            "Promotes clear and healthy pores"
+        ],
+        suitability: "Recommended for muscle stiffness, body aches, poor circulation, stress, fatigue, and individuals seeking detoxification and relaxation.",
+        process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Post-Treatment Relaxation",
+        image: "YOUR_IMAGE_URL_HERE",
+        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+    },
+    {
+        id: 3,
         name: "Full Body Massage (Abhyanga)",
         category: "wellness treatment",
         duration: "90 Mins",
@@ -33,60 +86,8 @@ const treatments = [
         image: "YOUR_IMAGE_URL_HERE",
         videoUrl: "https://www.youtube.com/embed/6kw1JBy1wdk?si=IKUQIXevMhkEyiZG"
     },
-    {
-        id: 2,
-        name: "Full Body Massage with Steam",
-        category: "wellness treatment",
-        duration: "75 Mins",
-        price: "Rs. 6,500",
-        description: "This treatment combines a full body Ayurvedic massage with herbal steam therapy. The steam opens the pores, promotes sweating, and helps remove toxins from the body while reducing stiffness, easing muscle tension, and improving circulation. It provides deep relaxation and supports the body's natural detoxification process.",
-        features: [
-            "Full body Ayurvedic oil massage",
-            "Herbal steam therapy",
-            "Opens pores and promotes detoxification",
-            "Relieves muscle stiffness and tension",
-            "Improves blood circulation",
-            "Enhances relaxation and wellbeing"
-        ],
-        keyBenefits: [
-            "Effective removal of deep-seated toxins",
-            "Reduces localized muscle pain",
-            "Boosts lymphatic system",
-            "Promotes clear and healthy pores"
-        ],
-        suitability: "Recommended for muscle stiffness, body aches, poor circulation, stress, fatigue, and individuals seeking detoxification and relaxation.",
-        process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Post-Treatment Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
-    },
-    {
-        id: 3,
-        name: "Full Package (Massage + Steam + Herbal Scrub + Herbal Bath)",
-        category: "wellness treatment",
-        duration: "180 Mins",
-        price: "Rs. 6,500",
-        description: "A complete rejuvenation therapy that includes a full body Ayurvedic massage, herbal steam, herbal scrub, and herbal bath. This luxurious treatment deeply cleanses and exfoliates the skin, removes dead cells, improves blood circulation, promotes detoxification, and restores energy and vitality. We use our own specially formulated herbal oils and natural herbal preparations, carefully selected according to each client's body constitution, skin condition, and health concerns for maximum therapeutic benefit.",
-        features: [
-            "Full body Ayurvedic oil massage",
-            "Herbal steam therapy",
-            "Natural herbal body scrub",
-            "Refreshing herbal bath",
-            "Deep skin cleansing and exfoliation",
-            "Improves blood circulation",
-            "Supports detoxification",
-            "Restores energy and vitality"
-        ],
-        keyBenefits: [
-            "Complete body transformation",
-            "Soft and rejuvenated skin",
-            "Intense relaxation and detoxification",
-            "Improved metabolic function"
-        ],
-        suitability: "Ideal for stress relief, fatigue, dull skin, poor circulation, toxin accumulation, body stiffness, and those seeking a complete wellness and rejuvenation experience.",
-        process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Herbal Scrub Application ➔ Herbal Bath ➔ Post-Treatment Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
-    },
+    
+    
     {
         id: 4,
         name: "Shirodhara",
