@@ -144,7 +144,7 @@ function showTreatmentDetails(id) {
                     
                     <div id="thumb-box-2" onclick="scrollToMediaSlide(2)" style="width: 60px; height: 45px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; opacity: 0.6; background: #1f2937; display: flex; align-items: center; justify-content: center; position: relative;">
                         <img src="${treatment.image}" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
-                        <span style="position: absolute; font-size: 1.2rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">▶️</span>
+                        <span style="position: absolute; font-size: 1.2rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.8);"></span>
                     </div>
                 </div>
             </div>
@@ -332,7 +332,7 @@ function submitBooking(event) {
                     `Please confirm availability. Thank you!`;
     
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/94781020385?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/94704744700?text=${encodedMessage}`;
     
     window.open(whatsappUrl, '_blank');
     closeBookingModal();

@@ -4,9 +4,9 @@ const treatments = [
     {
         id: 1,
         name: "Full Body Massage (Abhyanga)",
-        category: "clinic",
-        duration: "60 Mins",
-        price: "Rs. 5,000",
+        category: "wellness treatment",
+        duration: "90 Mins",
+        price: "Rs. 2,500",
         description: "A traditional Ayurvedic full body oil massage designed to relax the body, improve blood circulation, relieve muscle tension, and nourish the skin. This therapy reduces stress, fatigue, and body aches while promoting overall physical and mental wellbeing. Specially prepared herbal oils are selected according to each client's body constitution (Prakriti), health condition, and specific therapeutic needs.",
         features: [
             "Personalized herbal oil selection",
@@ -17,20 +17,26 @@ const treatments = [
             "Supports overall wellbeing"
         ],
         keyBenefits: [
-            "Deeply relaxes the nervous system",
-            "Improves skin texture and glow",
-            "Increases joint flexibility",
-            "Enhances body energy and vitality"
+            "Relaxes the entire body",
+            "Relieves muscle tension and stiffness",
+            "Improves blood circulation",
+            "Nourishes and moisturizes the skin",
+            "Helps reduce stress and anxiety",
+            "Eases fatigue and tiredness",
+            "Alleviates body aches and discomfort",
+            "Promotes deep relaxation",
+            "Supports overall wellbeing and rejuvenation",
+            "Enhances physical and mental balance"
         ],
-        suitability: "Recommended for stress, fatigue, insomnia, muscle stiffness, poor circulation, body pain, and general rejuvenation.",
+        suitability: "Who may experience Stress and anxiety relief,Muscle tension and stiffness,Body aches and fatigue,Poor circulation,Long sitting or standing hours,Post-exercise recovery,Deep relaxation,Overall wellbeing and skin nourishment,Tr process,Ayurvedic consultation,Oil massage,Herbal steam,Post treatment care",
         process: "Ayurvedic Consultation ➔ Prakriti Assessment ➔ Customized Herbal Oil Selection ➔ Full Body Abhyanga Massage ➔ Post-Treatment Relaxation",
         image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        videoUrl: "https://www.youtube.com/embed/6kw1JBy1wdk?si=IKUQIXevMhkEyiZG"
     },
     {
         id: 2,
         name: "Full Body Massage with Steam",
-        category: "clinic",
+        category: "wellness treatment",
         duration: "75 Mins",
         price: "Rs. 6,500",
         description: "This treatment combines a full body Ayurvedic massage with herbal steam therapy. The steam opens the pores, promotes sweating, and helps remove toxins from the body while reducing stiffness, easing muscle tension, and improving circulation. It provides deep relaxation and supports the body's natural detoxification process.",
@@ -56,9 +62,9 @@ const treatments = [
     {
         id: 3,
         name: "Full Package (Massage + Steam + Herbal Scrub + Herbal Bath)",
-        category: "clinic",
-        duration: "120 Mins",
-        price: "Rs. 12,000",
+        category: "wellness treatment",
+        duration: "180 Mins",
+        price: "Rs. 6,500",
         description: "A complete rejuvenation therapy that includes a full body Ayurvedic massage, herbal steam, herbal scrub, and herbal bath. This luxurious treatment deeply cleanses and exfoliates the skin, removes dead cells, improves blood circulation, promotes detoxification, and restores energy and vitality. We use our own specially formulated herbal oils and natural herbal preparations, carefully selected according to each client's body constitution, skin condition, and health concerns for maximum therapeutic benefit.",
         features: [
             "Full body Ayurvedic oil massage",
@@ -84,7 +90,7 @@ const treatments = [
     {
         id: 4,
         name: "Shirodhara",
-        category: "clinic",
+        category: "wellness treatment",
         duration: "60 Mins",
         price: "Rs. 8,000",
         description: "Shirodhara is a classical Ayurvedic treatment where a steady, rhythmic stream of warm herbal oil or medicated liquid is gently poured over the 'third eye' area at the center of the forehead. This deeply relaxing therapy calms the nervous system, reduces stress and anxiety, improves sleep quality, relieves chronic headaches, and promotes mental clarity, emotional balance, and overall wellbeing.",
@@ -112,7 +118,7 @@ const treatments = [
     {
         id: 5,
         name: "Nasya Karma (Nasal Therapy)",
-        category: "clinic",
+        category: "wellness treatment",
         duration: "45 Mins",
         price: "Rs. 6,500",
         description: "Nasya Karma is one of the five principal detoxification therapies of Panchakarma. This specialized Ayurvedic treatment involves the administration of medicated oils, ghee, herbal juices, or powders through the nasal passages. Known as the 'gateway to the head,' the nose provides a direct pathway to the brain and sensory organs. Nasya helps eliminate accumulated toxins, nourish the nervous system, balance Vata and Kapha doshas, and support the health of the head, neck, and respiratory system.",
@@ -140,7 +146,7 @@ const treatments = [
     {
         id: 6,
         name: "Jalaukavacharana (Leech Therapy)",
-        category: "clinic",
+        category: "sport massage therapy",
         duration: "45 Mins",
         price: "Rs. 8,500",
         description: "Jalaukavacharana is a specialized Ayurvedic bloodletting therapy (Raktamokshana) that utilizes medicinal leeches to remove impure or stagnant blood from affected areas. This traditional treatment is highly effective in reducing localized inflammation, pain, swelling, and congestion while helping to balance aggravated Pitta and Rakta doshas. The bioactive substances naturally released by medicinal leeches support improved circulation, detoxification, and tissue healing.",
@@ -168,7 +174,7 @@ const treatments = [
     {
         id: 7,
         name: "Agni Karma (Therapeutic Heat Cauterization)",
-        category: "clinic",
+        category: "wellness treatment",
         duration: "30 Mins",
         price: "Rs. 7,500",
         description: "Agni Karma is a classical Ayurvedic para-surgical procedure in which controlled therapeutic heat is applied to specific points of the body using a heated metallic instrument (Shalaka). This specialized treatment is highly effective for chronic pain, musculoskeletal disorders, corns, plantar fasciitis, and conditions associated with aggravated Vata and Kapha doshas. By delivering targeted heat to affected tissues, Agni Karma helps relieve pain, reduce stiffness, improve circulation, and stimulate the body's natural healing process.",
@@ -195,8 +201,8 @@ const treatments = [
     },
     {
         id: 8,
-        name: "Ayurvedic Facial Treatment",
-        category: "beauty",
+        name: "Facial Treatment",
+        category: "beauty treatment",
         duration: "75 Mins",
         price: "Rs. 6,000",
         description: "An Ayurvedic Facial Treatment is a natural and holistic skincare therapy based on the principles of Ayurveda. Designed to enhance both outer beauty and inner wellbeing, this treatment combines herbal cleansing, exfoliation, steam therapy, facial massage, and nourishing herbal masks to rejuvenate the skin naturally. Customized according to each individual's Dosha (Vata, Pitta, or Kapha), the treatment helps restore balance, improve skin health, promote relaxation, and reveal a radiant natural glow.",
@@ -223,8 +229,8 @@ const treatments = [
     },
     {
         id: 9,
-        name: "Ayurvedic Pedicure Treatment",
-        category: "beauty",
+        name: "Pedicure Treatment",
+        category: "beauty treatment",
         duration: "75 Mins",
         price: "Rs. 5,500",
         description: "An Ayurvedic Pedicure Treatment is a therapeutic foot care ritual inspired by the ancient healing principles of Ayurveda. More than a cosmetic treatment, it is a holistic wellness therapy that cleanses, softens, nourishes, and revitalizes the feet while promoting relaxation and restoring inner balance. Using herbal soaks, natural exfoliation, medicinal oils, and therapeutic massage techniques, this treatment improves circulation, relieves foot fatigue, and supports overall wellbeing.",
@@ -251,8 +257,8 @@ const treatments = [
     },
     {
     id: 10,
-    name: "Ayurvedic Fat Burning Therapy",
-    category: "clinic",
+    name: "Fat Burning Therapy",
+    category: "beauty treatment",
     duration: "45 Mins",
     price: "Rs. 7,000",
     description: "Rooted in the timeless wisdom of Ayurveda, our Abdominal Fat Reduction Therapy is thoughtfully designed to support natural body contouring and metabolic balance. This specialized treatment utilizes a unique blend of potent herbal powders enriched with Lekhana Guna — the Ayurvedic “scraping” property known for its ability to break down and eliminate accumulated fat and toxins from the body. Through carefully selected herbs and therapeutic application techniques, the treatment targets excess subcutaneous abdominal fat while stimulating circulation and enhancing the body’s natural detoxification process. In Ayurveda, Lekhana Guna is renowned for its capacity to reduce Meda Dhatu (adipose tissue), balance aggravated Kapha Dosha, and cleanse blocked bodily channels.",
