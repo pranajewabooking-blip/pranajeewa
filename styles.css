@@ -206,7 +206,7 @@ p { font-size: 0.95rem; }
 .news-content {
     display: flex;
     white-space: nowrap;
-    animation: tickerScroll 20s linear infinite;
+    animation: tickerScroll 30s linear infinite;
 }
 
 .news-item {
@@ -273,9 +273,7 @@ p { font-size: 0.95rem; }
     left: 0;
     width: 100%;
     height: 100%;
-    /* සුදු පාට වෙනුවට පින්තූරය 60% ක් පැහැදිලිව පේන මෘදු අඳුරු Overlay එකක් දීම */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%) !important;
-    z-index: 1;
+   
 }
 
 /* Slider එක ඇතුළත ඇති අකුරු සහ බොත්තම් Overlay එකට උඩින් පෙනීමට */
