@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Details - Pranajeewa Sethsuwa Ayurveda Hospital</title>
+    <meta name="description" content="View detailed information about our Ayurvedic treatments including duration, price, features, and benefits at Sethsuwa Ayurveda Hospital.">
+    <meta name="keywords" content="Ayurvedic treatment details, therapy information, Pranajeewa, Sethsuwa">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="slider-removebg-preview.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626',
+                        secondary: '#fff',
+                        accent: '#b91c1c'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-icon">
+                <svg class="w-16 h-16 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path>
+                </svg>
+            </div>
+            <p class="loading-text">Pranajeewa</p>
+        </div>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo-container flex items-center gap-3">
+                <a href="index.html"><img src="slider-removebg-preview.png" alt="Pranajeewa Logo" class="logo-bounce h-16 md:h-24 cursor-pointer"></a>
+                <span class="logo-text">Sethsuwa</span>
+            </div>
+            <div class="hidden md:flex space-x-8" id="nav-menu">
+                <a href="index.html" class="nav-link nav-underline">Home</a>
+                <a href="about.html" class="nav-link nav-underline">About</a>
+                <a href="treatments.html" class="nav-link nav-underline">Treatments</a>
+                <a href="location.html" class="nav-link nav-underline">Location</a>
+            </div>
+            <button id="hamburger" class="md:hidden hamburger-button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="treatments.html" class="mobile-nav-link">Treatments</a>
+            <a href="location.html" class="mobile-nav-link">Location</a>
+        </div>
+    </header>
+
+    <section id="treatment-details" class="py-20 px-4 bg-white" style="padding-top: 120px;">
+        <div class="container mx-auto max-w-4xl">
+            <div class="back-button-container">
+                <a href="treatments.html" class="back-button">← Back to Treatments</a>
+            </div>
+            <div id="treatment-details-content">
+            </div>
+        </div>
+    </section>
+
+    <div id="booking-modal" class="modal-overlay hidden">
+        <div class="modal-content booking-modal-content">
+            <button class="modal-close" onclick="closeBookingModal()">×</button>
+            <h3 class="booking-title">Book Your Treatment</h3>
+            <form id="booking-form" class="booking-form" onsubmit="submitBooking(event)">
+                <input type="hidden" id="selected-treatment">
+                <div class="form-group">
+                    <label for="user-name">Name</label>
+                    <input type="text" id="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-date">Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-time">Time</label>
+                    <input type="time" id="booking-time" required>
+                </div>
+                <button type="submit" class="booking-submit">Book via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="https://wa.me/94781020385" target="_blank" class="floating-whatsapp animate-pulse-vibrate">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+    </a>
+
+    <footer class="premium-footer">
+        <div class="footer-waves">
+            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/>
+                </defs>
+                <g class="wave-parallax">
+                    <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.05)"/>
+                    <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.1)"/>
+                    <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.15)"/>
+                    <use href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.2)"/>
+                </g>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-premium-grid">
+                <div class="footer-brand-box">
+                    <h3 class="footer-title-premium">Sethsuwa Ayurveda Hospital (Pvt) Ltd</h3>
+                    <p class="footer-about-text">Authentic Ayurvedic healing since 200 years. Traditional medicine for modern wellness. Restoring your mind, body, and spirit.</p>
+                </div>
+                <div class="footer-links-box">
+                    <h4 class="footer-subtitle-premium">Quick Links</h4>
+                    <ul class="premium-footer-links">
+                        <li><a href="index.html" class="p-footer-link">Home</a></li>
+                        <li><a href="about.html" class="p-footer-link">About Us</a></li>
+                        <li><a href="treatments.html" class="p-footer-link">Treatments</a></li>
+                        <li><a href="location.html" class="p-footer-link">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-box">
+                    <h4 class="footer-subtitle-premium">Contact Info</h4>
+                    <div class="p-contact-item">
+                        <span class="p-contact-icon">📍</span>
+                        <p>Sethsuwa Ayurweda Hospital</p>
+                    </div>
+                    <div class="p-contact-item">
+                        <span class="p-contact-icon">📞</span>
+                        <p>+94 78 102 0385</p>
+                    </div>
+                    <div class="p-contact-item">
+                        <span class="p-contact-icon">✉️</span>
+                        <p>Pranajeewa@hotmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-social-box">
+                    <h4 class="footer-subtitle-premium">Connect With Us</h4>
+                    <div class="premium-social-icons">
+                        <a href="https://web.facebook.com/pranajeewaoil/" class="social-icon-btn facebook" target="_blank" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/p/DXYjelWE1dh/" class="social-icon-btn instagram" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.pranajeewa.lk/" class="social-icon-btn website" target="_blank" aria-label="Website">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-premium-bottom">
+                <p class="copyright-text">© 2026 <span class="text-glow">pranajeewa</span>. All rights reserved.</p>
+                <p class="developer-text">Developed by <a href="https://sitesn4p-commits.github.io/sites-nap/" class="premium-snap-link" target="_blank">SiteSnap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/treatments.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Load treatment details from URL parameter on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof loadTreatmentFromUrl === 'function') {
+                loadTreatmentFromUrl();
+            }
+        });
+    </script>
+</body>
+</html>

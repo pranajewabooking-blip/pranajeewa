@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranajeewa - Sethsuwa Ayurveda Hospital</title>
+    <title>Pranajeewa - Sethsuwa Ayurveda Hospital | Home</title>
+    <meta name="description" content="Sethsuwa Pranajeewa Ayurveda Hospital - Authentic Ayurvedic healing since 200 years. Traditional medicine for modern wellness in Sri Lanka.">
+    <meta name="keywords" content="Ayurveda, Pranajeewa, Sethsuwa, Sri Lanka, Ayurvedic treatment, herbal medicine">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="slider-removebg-preview.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,14 +39,14 @@
     <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="logo-container flex items-center gap-3">
-                <img src="slider-removebg-preview.png" alt="Pranajeewa Logo" class="logo-bounce h-16 md:h-24 cursor-pointer" onclick="navigateTo('home')">
+                <a href="index.html"><img src="slider-removebg-preview.png" alt="Pranajeewa Logo" class="logo-bounce h-16 md:h-24 cursor-pointer"></a>
                 <span class="logo-text">Sethsuwa</span>
             </div>
             <div class="hidden md:flex space-x-8" id="nav-menu">
-                <a href="#" class="nav-link nav-underline" onclick="navigateTo('home'); return false;">Home</a>
-                <a href="#" class="nav-link nav-underline" onclick="navigateTo('about'); return false;">About</a>
-                <a href="#" class="nav-link nav-underline" onclick="navigateTo('treatments'); return false;">Treatments</a>
-                <a href="#" class="nav-link nav-underline" onclick="navigateTo('location'); return false;">Location</a>
+                <a href="index.html" class="nav-link nav-underline">Home</a>
+                <a href="about.html" class="nav-link nav-underline">About</a>
+                <a href="treatments.html" class="nav-link nav-underline">Treatments</a>
+                <a href="location.html" class="nav-link nav-underline">Location</a>
             </div>
             <button id="hamburger" class="md:hidden hamburger-button">
                 <span class="hamburger-line"></span>
@@ -53,306 +55,125 @@
             </button>
         </nav>
         <div id="mobile-menu" class="mobile-menu hidden md:hidden">
-            <a href="#" class="mobile-nav-link" onclick="navigateTo('home'); return false;">Home</a>
-            <a href="#" class="mobile-nav-link" onclick="navigateTo('about'); return false;">About</a>
-            <a href="#" class="mobile-nav-link" onclick="navigateTo('treatments'); return false;">Treatments</a>
-            <a href="#" class="mobile-nav-link" onclick="navigateTo('location'); return false;">Location</a>
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="treatments.html" class="mobile-nav-link">Treatments</a>
+            <a href="location.html" class="mobile-nav-link">Location</a>
         </div>
     </header>
 
-    <section id="home-view" class="page-view active">
-        <section id="home" class="hero-section min-h-screen flex items-center justify-center relative">
-            <div class="slider-container">
-                <div class="slider-slide active" data-slide="0" style="background-image: url('https://img.magnific.com/free-photo/young-sportive-man-jogging-field-sunrise_176420-5175.jpg?semt=ais_hybrid&w=740&q=80');">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate-slide-in-left"></h1>
-                        <p class="hero-subtitle animate-slide-in-right"></p>
-                        <button class="hero-button animate-pulse-glow" onclick="navigateTo('treatments')">Explore Treatments</button>
-                    </div>
-                </div>
-                <div class="slider-slide" data-slide="1" style="background-image: url('slider.jpeg');">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate-slide-in-left"></h1>
-                        <p class="hero-subtitle animate-slide-in-right"></p>
-                        <button class="hero-button animate-pulse-glow" onclick="navigateTo('treatments')">Our Story</button>
-                    </div>
-                </div>
-                <div class="slider-slide" data-slide="2" style="background-image: url('https://img.magnific.com/free-photo/healthy-young-asian-runner-woman-warm-up-body-stretching-before-exercise_7861-1084.jpg?semt=ais_hybrid&w=740&q=80');">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate-slide-in-left"></h1>
-                        <p class="hero-subtitle animate-slide-in-right"></p>
-                        <button class="hero-button animate-pulse-glow" onclick="openBookingModal()">Book Now</button>
-                    </div>
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center relative">
+        <div class="slider-container">
+            <div class="slider-slide active" data-slide="0" style="background-image: url('https://img.magnific.com/free-photo/young-sportive-man-jogging-field-sunrise_176420-5175.jpg?semt=ais_hybrid&w=740&q=80');">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-slide-in-left"></h1>
+                    <p class="hero-subtitle animate-slide-in-right"></p>
+                    <button class="hero-button animate-pulse-glow" onclick="window.location.href='treatments.html'">Explore Treatments</button>
                 </div>
             </div>
-            <div class="slider-dots">
-                <span class="dot active" onclick="currentSlide(0)"></span>
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-            </div>
-            <div class="scroll-indicator animate-bounce">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </section>
-
-        <div class="news-ticker-wrapper">
-    <div class="news-ticker">
-        <div class="news-content">
-            <span class="news-item">| පිලිගත් ආයුර්වේද වෛද්‍යවරුන්ගේ නිරීක්ෂණය යටතේ සියලුම ආයුර්වේදීය ප්‍රතිකාර සහ සත්කාර සිදු කරනු ලබයි. |</span>
-            <span class="news-item">| All Ayurvedic treatments and care are performed under the supervision of recognized Ayurvedic doctors. |</span>
-            <span class="news-item">| For your comfort and privacy, Ayurvedic massage treatments are provided by female therapists for female clients and male therapists for male clients only. |</span>
-            <span class="news-item">| සත්කාර සඳහා කාන්තා රෝගීන්ට කාන්තා වෛද්‍යවරු සහ පිරිමි රෝගීන්ට පිරිමි වෛද්‍යවරු පමණක් සේවය කරනු ලබයි. |</span>
-
-            <span class="news-item">| පිලිගත් ආයුර්වේද වෛද්‍යවරුන්ගේ නිරීක්ෂණය යටතේ සියලුම ආයුර්වේදීය ප්‍රතිකාර සහ සත්කාර සිදු කරනු ලබයි. |</span>
-            <span class="news-item">| All Ayurvedic treatments and care are performed under the supervision of recognized Ayurvedic doctors. |</span>
-            <span class="news-item">| For your comfort and privacy, Ayurvedic massage treatments are provided by female therapists for female clients and male therapists for male clients only. |</span>
-            <span class="news-item">| සත්කාර සඳහා කාන්තා රෝගීන්ට කාන්තා වෛද්‍යවරු සහ පිරිමි රෝගීන්ට පිරිමි වෛද්‍යවරු පමණක් සේවය කරනු ලබයි. |</span>
-        </div>
-    </div>
-</div>
-
-        <section id="about" class="py-20 px-4 bg-white">
-            <div class="container mx-auto max-w-4xl">
-                <h2 class="section-title">About Us</h2>
-                <div class="about-content">
-                    <p class="about-text">
-                        Sethsuwa Pranajeewa medicine is the most sought after product at Sethsuwa Hospital. It is used both in Sri Lanka and the world over. It was the Buddhist monk Venerable Waga Gnanaloka thero who first treated his hundreds of patients with his traditional medicine, obtained from his Ola leaf inscriptions passed down from generations. The monk at eighty years looked forty, more important was the fact that he led a very active life, waking up at 4.30 a.m., he devoted the early hours of the morning paying reverence for the Lord Buddha. The hours that followed were spent in compassionate treatment by this doctor monk.
-                        <br><br>
-                        Hundreds gathered at the Sethsuwa Ayurveda Hospital, then called Veda Madura (Ayurveda House) where an initial spoonful of SEthsuwa Pranajeewa was administered to every patient. News reached far and wide, allover the country of the tremendous relief that followed the initial administration of the first tablespoon of Pranajeewa.
-                        <br><br>
-                        His only understudy was Dr. Sujeewa Vithanage a young doctor with a medical degree from the University of Colombo (BAMS) who was engaged in extensive research into the ancient system of medicine. Together they made the miraculous Sethsuwa Pranajeewa medicine in cauldrons and from Venerable Waga Gnanaloka, it was his young understudy Dr. Sujeewa , who thereafter began to make this ancient recipe from the ola leaves which date back to over 200 years. During those days , perhaps for over 200 years Sethsuwa Pranajeewa was the only cure for villagers afflicted with different ailments and they experienced relief. Thus, it became their only cure of the grandfathers, of the fathers and of the children of their children thereafter.
-                        <br><br>
-                        There are hundreds of users of Sethsuwa Pranajeewa medicine in the United Kingdom, USA and othe parts of the world. They all have their pleasant experiences to relate with Sethsuwa Pranajeewa medicine and its miraculous properties, but the most heartening of them all comes from an American doctor who says that he had a problem with prostrate cancer and had to have surgery, At first the PSA readings had looked great, but there arose a new problem of his PSA reading doubling every three months. It was then required that he takes radiation treatment and took Sethsuwa Pranajeewa medicine too.
-                    </p>
+            <div class="slider-slide" data-slide="1" style="background-image: url('slider.jpeg');">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-slide-in-left"></h1>
+                    <p class="hero-subtitle animate-slide-in-right"></p>
+                    <button class="hero-button animate-pulse-glow" onclick="window.location.href='about.html'">Our Story</button>
                 </div>
             </div>
-        </section>
-
-        <section class="categories-section">
-            <h2 class="section-title">Our Treatment Categories</h2>
-            <div class="categories-carousel-wrapper">
-                <div class="category-slide-card" onclick="document.getElementById('category-filter').value='clinic'; searchTreatments(); navigateTo('treatments');">
-                    <div class="category-card-icon">🏥</div>
-                    <h3 class="category-card-title">Clinic & Free Consultation</h3>
-                    <p class="category-card-text">Professional consultations and deep body detoxification treatments.</p>
+            <div class="slider-slide" data-slide="2" style="background-image: url('https://img.magnific.com/free-photo/healthy-young-asian-runner-woman-warm-up-body-stretching-before-exercise_7861-1084.jpg?semt=ais_hybrid&w=740&q=80');">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-slide-in-left"></h1>
+                    <p class="hero-subtitle animate-slide-in-right"></p>
+                    <button class="hero-button animate-pulse-glow" onclick="openBookingModal()">Book Now</button>
                 </div>
-                <div class="category-slide-card" onclick="document.getElementById('category-filter').value='wellness treatment'; searchTreatments(); navigateTo('treatments');">
-                    <div class="category-card-icon">🌿</div>
-                    <h3 class="category-card-title">Wellness Treatments</h3>
-                    <p class="category-card-text">Traditional warm oil therapies for stress and deep relaxation.</p>
-                </div>
-                <div class="category-slide-card" onclick="document.getElementById('category-filter').value='sport massage therapy'; searchTreatments(); navigateTo('treatments');">
-                    <div class="category-card-icon">🏃‍♂️</div>
-                    <h3 class="category-card-title">Sports Massage Therapy</h3>
-                    <p class="category-card-text">Specialized deep tissue treatments for muscle recovery and injuries.</p>
-                </div>
-                <div class="category-slide-card" onclick="document.getElementById('category-filter').value='beauty treatment'; searchTreatments(); navigateTo('treatments');">
-                    <div class="category-card-icon">✨</div>
-                    <h3 class="category-card-title">Beauty Care</h3>
-                    <p class="category-card-text">Natural herbal facials and organic body wraps for skin radiance.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-16 px-4 bg-gray-50 border-t border-b border-gray-100">
-    <div class="container mx-auto max-w-6xl">
-        <h2 class="section-title text-center mb-12 text-3xl md:text-4xl font-bold text-gray-900" style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 3rem;">
-            What Our Patients Say On Google
-        </h2>
-        
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-6195c18f-75e2-4e3a-b12c-272f4f04b8ec" data-elfsight-app-lazy></div>
-    </div>
-</section>
-
-        <section id="location" class="py-20 px-4 bg-white">
-            <div class="container mx-auto">
-                <h2 class="section-title">Our Location</h2>
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56024.16226185628!2d79.88119800297447!3d6.953638119855819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257ce81120163%3A0x86586a76f93c2165!2sSethsuwa%20Ayurweda%20Hospital!5e1!3m2!1sen!2slk!4v1781223278274!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
-                </div>
-            </div>
-        </section>
-    </section>
-
-    <section id="treatments-view" class="page-view">
-        <section id="treatments" class="relative py-20 px-4">
-            <div class="container mx-auto">
-                <div class="back-button-container">
-                    <button class="back-button" onclick="navigateTo('home')">← Back to Home</button>
-                </div>
-                <h2 class="section-title">Our Treatments</h2>
-                
-                <div class="search-filter-container">
-                    <input type="text" id="search-input" placeholder="Search treatments..." class="search-input" onkeyup="searchTreatments()">
-                    <select id="category-filter" class="category-filter" onchange="filterTreatments()">
-                        <option value="all">All Categories</option>
-                        <option value="clinic">Clinic</option>
-                        <option value="wellness treatment">Wellness Treatment</option>
-                        <option value="sport massage therapy">Sport Massage Therapy</option>
-                        <option value="beauty treatment">Beauty Treatment</option>
-                    </select>
-                </div>
-
-                <div id="treatments-grid" class="treatments-grid">
-                    </div>
-            </div>
-        </section>
-    </section>
-
-    <section id="treatment-details-view" class="page-view">
-        <section id="treatment-details" class="py-20 px-4 bg-white">
-            <div class="container mx-auto max-w-4xl">
-                <div class="back-button-container">
-                    <button class="back-button" onclick="navigateTo('treatments')">← Back to Treatments</button>
-                </div>
-                <div id="treatment-details-content">
-                    </div>
-            </div>
-        </section>
-    </section>
-
-    <section id="about-view" class="page-view bg-gray-50">
-        <div class="about-premium-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8f4ixxGvQoajF2XVkTzTRGXZwr7G7diJriA&s');">
-            <div class="container mx-auto text-center px-4 relative z-10">
-                <div class="back-button-container mb-6">
-                    <button class="back-button" onclick="navigateTo('home')">← Back to Home</button>
-                </div>
-                <h1 class="about-hero-title">Discover Our Journey into Holistic Wellness</h1>
-                <p class="about-hero-subtitle">Ancient Wisdom, Modern Healing</p>
             </div>
         </div>
-
-        <section class="py-12 px-4">
-            <div class="container mx-auto max-w-4xl">
-                <div class="about-content-card">
-                    <div class="about-main-img-wrapper mb-8">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8f4ixxGvQoajF2XVkTzTRGXZwr7G7diJriA&s" alt="Ayurvedic Spa Wellness" class="about-premium-image">
-                    </div>
-                    
-                    <div class="about-story-rich-text">
-                        <h2 class="story-main-heading mb-6">The Legacy of Sethsuwa Pranajeewa</h2>
-                        <p class="story-p">
-                            <strong>Sethsuwa Pranajeewa medicine</strong> is the most sought-after product at Sethsuwa Hospital. It is trusted and widely used both in Sri Lanka and the world over. The miraculous formula was originated by the Buddhist monk, <strong>Venerable Waga Gnanaloka Thero</strong>, who first treated hundreds of patients with his traditional medicine, obtained from ancient Ola leaf inscriptions passed down through generations. 
-                        </p>
-                        <p class="story-p">
-                            Even at eighty years of age, the monk looked as youthful as forty. More importantly, he led an exceptionally active life, waking up at 4:30 a.m. daily to devote his early hours to paying reverence to Lord Buddha. The hours that followed were spent in compassionate, free treatment for his patients.
-                        </p>
-                        <p class="story-p">
-                            Hundreds gathered daily at the Sethsuwa Ayurveda Hospital, then affectionately called the <em>"Veda Madura" (Ayurveda House)</em>, where an initial spoonful of Sethsuwa Pranajeewa was administered to every single patient. News reached far and wide across the entire country of the tremendous, immediate relief that followed the administration of that first tablespoon.
-                        </p>
-
-                        <div class="story-highlight-quote my-8">
-                            "Passed down through ancient Ola leaves dating back over 200 years, Sethsuwa Pranajeewa remains a timeless cure across generations."
-                        </div>
-                        
-                        <p class="story-p">
-                            The monk's only understudy was <strong>Dr. Sujeewa Vithanage</strong>, a brilliant young doctor with a medical degree from the University of Colombo (BAMS), who was engaged in extensive research into ancient medical systems. Together, they prepared the miraculous medicine in massive traditional cauldrons. 
-                        </p>
-                        <p class="story-p">
-                            Following the passing of Venerable Waga Gnanaloka, Dr. Sujeewa took over the sacred responsibility of crafting this ancient recipe. For over two centuries, Sethsuwa Pranajeewa served as the sole, trusted cure for villagers afflicted with various ailments, providing relief to grandfathers, fathers, and children alike.
-                        </p>
-                        <p class="story-p">
-                            Today, there are hundreds of loyal users of Sethsuwa Pranajeewa medicine in the United Kingdom, USA, and other parts of the world. Among the countless heartening experiences shared globally, an American doctor revealed that after facing prostate cancer surgery and experiencing his PSA readings doubling every three months, taking Sethsuwa Pranajeewa alongside his radiation treatment brought miraculous improvements.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 px-4 bg-white border-t border-gray-100">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="section-title text-center mb-12">Our Core Values</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">🕉️</div>
-                        <h3 class="value-title">Authenticity</h3>
-                        <p class="value-description">We strictly adhere to time-tested Ayurvedic principles and traditional techniques passed down through generations.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">🌿</div>
-                        <h3 class="value-title">Natural Healing</h3>
-                        <p class="value-description">We use only 100% natural herbs, essential oils, and organic ingredients. No harsh chemicals, ever.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">💝</div>
-                        <h3 class="value-title">Customer Care</h3>
-                        <p class="value-description">Your well-being is our ultimate priority. Every treatment is customized by expert hands to match your unique bodily profile.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+        <div class="scroll-indicator animate-bounce">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
     </section>
 
-    <section id="location-view" class="page-view py-16 px-4 bg-gray-50">
+    <div class="news-ticker-wrapper">
+        <div class="news-ticker">
+            <div class="news-content">
+                <span class="news-item">| පිලිගත් ආයුර්වේද වෛද්‍යවරුන්ගේ නිරීක්ෂණය යටතේ සියලුම ආයුර්වේදීය ප්‍රතිකාර සහ සත්කාර සිදු කරනු ලබයි. |</span>
+                <span class="news-item">| All Ayurvedic treatments and care are performed under the supervision of recognized Ayurvedic doctors. |</span>
+                <span class="news-item">| For your comfort and privacy, Ayurvedic massage treatments are provided by female therapists for female clients and male therapists for male clients only. |</span>
+                <span class="news-item">| සත්කාර සඳහා කාන්තා රෝගීන්ට කාන්තා වෛද්‍යවරු සහ පිරිමි රෝගීන්ට පිරිමි වෛද්‍යවරු පමණක් සේවය කරනු ලබයි. |</span>
+                <span class="news-item">| පිලිගත් ආයුර්වේද වෛද්‍යවරුන්ගේ නිරීක්ෂණය යටතේ සියලුම ආයුර්වේදීය ප්‍රතිකාර සහ සත්කාර සිදු කරනු ලබයි. |</span>
+                <span class="news-item">| All Ayurvedic treatments and care are performed under the supervision of recognized Ayurvedic doctors. |</span>
+                <span class="news-item">| For your comfort and privacy, Ayurvedic massage treatments are provided by female therapists for female clients and male therapists for male clients only. |</span>
+                <span class="news-item">| සත්කාර සඳහා කාන්තා රෝගීන්ට කාන්තා වෛද්‍යවරු සහ පිරිමි රෝගීන්ට පිරිමි වෛද්‍යවරු පමණක් සේවය කරනු ලබයි. |</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    <strong>Sethsuwa Pranajeewa medicine</strong> is the most sought after product at Sethsuwa Hospital. It is used both in Sri Lanka and the world over. It was the Buddhist monk Venerable Waga Gnanaloka thero who first treated his hundreds of patients with his traditional medicine, obtained from his Ola leaf inscriptions passed down from generations. The monk at eighty years looked forty, more important was the fact that he led a very active life, waking up at 4.30 a.m., he devoted the early hours of the morning paying reverence for the Lord Buddha. The hours that followed were spent in compassionate treatment by this doctor monk.
+                </p>
+                <div class="text-center mt-6">
+                    <a href="about.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition" style="background: #dc2626; color: white; padding: 12px 35px; border-radius: 50px; text-decoration: none; display: inline-block;">Read Our Full Story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <h2 class="section-title">Our Treatment Categories</h2>
+        <div class="categories-carousel-wrapper">
+            <div class="category-slide-card" onclick="window.location.href='treatments.html?category=clinic'">
+                <div class="category-card-icon">🏥</div>
+                <h3 class="category-card-title">Clinic & Free Consultation</h3>
+                <p class="category-card-text">Professional consultations and deep body detoxification treatments.</p>
+            </div>
+            <div class="category-slide-card" onclick="window.location.href='treatments.html?category=wellness+treatment'">
+                <div class="category-card-icon">🌿</div>
+                <h3 class="category-card-title">Wellness Treatments</h3>
+                <p class="category-card-text">Traditional warm oil therapies for stress and deep relaxation.</p>
+            </div>
+            <div class="category-slide-card" onclick="window.location.href='treatments.html?category=sport+massage+therapy'">
+                <div class="category-card-icon">🏃‍♂️</div>
+                <h3 class="category-card-title">Sports Massage Therapy</h3>
+                <p class="category-card-text">Specialized deep tissue treatments for muscle recovery and injuries.</p>
+            </div>
+            <div class="category-slide-card" onclick="window.location.href='treatments.html?category=beauty+treatment'">
+                <div class="category-card-icon">✨</div>
+                <h3 class="category-card-title">Beauty Care</h3>
+                <p class="category-card-text">Natural herbal facials and organic body wraps for skin radiance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-gray-50 border-t border-b border-gray-100">
         <div class="container mx-auto max-w-6xl">
-            <h2 class="section-title">Visit Our Hospital</h2>
-            <div class="location-premium-grid">
-                <div class="location-info-side">
-                    <div class="location-detail-card">
-                        <div class="loc-card-icon">📍</div>
-                        <div class="loc-card-content">
-                            <h3>Our Address</h3>
-                            <p><strong>Sethsuwa Ayurweda Hospital</strong></p>
-                            <p>Makola South</p>
-                            <p class="text-sm text-gray-500 mt-2"> <strong>Landmark:</strong>No.258/19, Vihara Mawatha, Batalanda Road, Makola South, Makola, Kiribathgoda.</p>
-                        </div>
-                    </div>
-                    <div class="location-detail-card">
-                        <div class="loc-card-icon">🕒</div>
-                        <div class="loc-card-content">
-                            <h3>Opening Hours</h3>
-                            <div class="hours-row"><span>Everyday:</span> <strong>8:00 AM - 5:00 PM</strong></div>
-                            <div class="hours-row text-red-600"><span>Poya Days:</span> <strong>Closed</strong></div>
-                        </div>
-                    </div>
-                    <div class="location-detail-card">
-                        <div class="loc-card-icon">🚗</div>
-                        <div class="loc-card-content">
-                            <h3>Hospital Facilities</h3>
-                            <ul class="loc-facilities-list">
-                                <li>✓ Free Spacious Parking Available</li>
-                                <li>✓ Wheelchair Accessible Entrance</li>
-                                <li>✓ Comfortable Waiting Area</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="location-detail-card highlight-loc-card">
-                        <div class="loc-card-icon">📞</div>
-                        <div class="loc-card-content">
-                            <h3>Need Directions?</h3>
-                            <p>If you're having trouble finding us, call our reception desk directly:</p>
-                            <a href="tel:+94781020385" class="loc-phone-link">+94 78 102 0385</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="location-map-side">
-                    <div class="map-card-premium">
-                        <div class="map-card-header">
-                            <span class="map-dot"></span>
-                            <span class="map-header-title">Live Interactive Map</span>
-                        </div>
-                        <div class="map-wrapper-inner">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.3854172532397!2d79.95500059858006!3d6.970351701942007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257ce81120163%3A0x86586a76f93c2165!2sSethsuwa%20Ayurweda%20Hospital!5e1!3m2!1sen!2slk!4v1781417002797!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title text-center mb-12 text-3xl md:text-4xl font-bold text-gray-900" style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 3rem;">
+                What Our Patients Say On Google
+            </h2>
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-6195c18f-75e2-4e3a-b12c-272f4f04b8ec" data-elfsight-app-lazy></div>
         </div>
     </section>
 
-    <div id="treatment-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transition-all transform p-4 sm:p-6 relative">
-            <button onclick="closeTreatmentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-gray-100 p-2 rounded-full transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div id="treatment-modal-body" class="mt-4">
-                </div>
+    <section id="location" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <h2 class="section-title">Our Location</h2>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56024.16226185628!2d79.88119800297447!3d6.953638119855819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257ce81120163%3A0x86586a76f93c2165!2sSethsuwa%20Ayurweda%20Hospital!5e1!3m2!1sen!2slk!4v1781223278274!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+            </div>
+            <div class="text-center mt-6">
+                <a href="location.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition" style="background: #dc2626; color: white; padding: 12px 35px; border-radius: 50px; text-decoration: none; display: inline-block;">Visit Our Location Page →</a>
+            </div>
         </div>
-    </div>
+    </section>
 
     <div id="booking-modal" class="modal-overlay hidden">
         <div class="modal-content booking-modal-content">
@@ -391,17 +212,16 @@
         <div class="footer-waves">
             <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
-                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"/>
                 </defs>
                 <g class="wave-parallax">
-                    <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.05)" />
-                    <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.1)" />
-                    <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.15)" />
-                    <use href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.2)" />
+                    <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.05)"/>
+                    <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.1)"/>
+                    <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.15)"/>
+                    <use href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.2)"/>
                 </g>
             </svg>
         </div>
-
         <div class="footer-container">
             <div class="footer-premium-grid">
                 <div class="footer-brand-box">
@@ -411,10 +231,10 @@
                 <div class="footer-links-box">
                     <h4 class="footer-subtitle-premium">Quick Links</h4>
                     <ul class="premium-footer-links">
-                        <li><a href="#" onclick="navigateTo('home'); return false;" class="p-footer-link">Home</a></li>
-                        <li><a href="#" onclick="navigateTo('about'); return false;" class="p-footer-link">About Us</a></li>
-                        <li><a href="#" onclick="navigateTo('treatments'); return false;" class="p-footer-link">Treatments</a></li>
-                        <li><a href="#" onclick="navigateTo('location'); return false;" class="p-footer-link">Location</a></li>
+                        <li><a href="index.html" class="p-footer-link">Home</a></li>
+                        <li><a href="about.html" class="p-footer-link">About Us</a></li>
+                        <li><a href="treatments.html" class="p-footer-link">Treatments</a></li>
+                        <li><a href="location.html" class="p-footer-link">Location</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact-box">
@@ -447,7 +267,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer-premium-bottom">
                 <p class="copyright-text">© 2026 <span class="text-glow">pranajeewa</span>. All rights reserved.</p>
                 <p class="developer-text">Developed by <a href="https://sitesn4p-commits.github.io/sites-nap/" class="premium-snap-link" target="_blank">SiteSnap</a></p>
@@ -455,7 +274,7 @@
         </div>
     </footer>
 
-    <script src="treatments.js"></script>
-    <script src="script.js"></script>
+    <script src="js/treatments.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
