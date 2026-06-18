@@ -25,8 +25,14 @@ const treatments = [
         ],
         suitability: "Ideal for stress relief, fatigue, dull skin, poor circulation, toxin accumulation, body stiffness, and those seeking a complete wellness and rejuvenation experience.",
         process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Herbal Scrub Application ➔ Herbal Bath ➔ Post-Treatment Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
+            "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80",
+            "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+        ],
+        videos: ["https://www.youtube.com/embed/ZjyzUibvXxE?si=v2x3NAsSV1t03OPD"],
+        videoUrl: ""
     },
     {
         id: 2,
@@ -51,8 +57,14 @@ const treatments = [
         ],
         suitability: "Recommended for muscle stiffness, body aches, poor circulation, stress, fatigue, and individuals seeking detoxification and relaxation.",
         process: "Ayurvedic Consultation ➔ Personalized Herbal Oil Selection ➔ Full Body Massage ➔ Herbal Steam Therapy ➔ Post-Treatment Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80",
+            "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
         id: 3,
@@ -83,11 +95,17 @@ const treatments = [
         ],
         suitability: "Who may experience Stress and anxiety relief,Muscle tension and stiffness,Body aches and fatigue,Poor circulation,Long sitting or standing hours,Post-exercise recovery,Deep relaxation,Overall wellbeing and skin nourishment,Tr process,Ayurvedic consultation,Oil massage,Herbal steam,Post treatment care",
         process: "Ayurvedic Consultation ➔ Prakriti Assessment ➔ Customized Herbal Oil Selection ➔ Full Body Abhyanga Massage ➔ Post-Treatment Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
+        image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80",
+            "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80",
+            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+        ],
+        videos: [
+            "https://www.youtube.com/embed/6kw1JBy1wdk?si=IKUQIXevMhkEyiZG"
+        ],
         videoUrl: "https://www.youtube.com/embed/6kw1JBy1wdk?si=IKUQIXevMhkEyiZG"
     },
-    
-    
     {
         id: 4,
         name: "Shirodhara",
@@ -113,8 +131,14 @@ const treatments = [
         ],
         suitability: "Recommended for stress, anxiety, insomnia, mental fatigue, chronic headaches, migraines, emotional imbalance, and individuals seeking deep mental relaxation and rejuvenation.",
         process: "Ayurvedic Consultation ➔ Selection of Medicated Herbal Oil ➔ Gentle Forehead Oil Streaming (Shirodhara) ➔ Relaxation Therapy ➔ Post-Treatment Rest",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80",
+            "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+            "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
         id: 5,
@@ -141,8 +165,14 @@ const treatments = [
         ],
         suitability: "Recommended for chronic sinusitis, allergic rhinitis, migraines, recurrent headaches, nasal congestion, anxiety, stress-related disorders, sleep disturbances, hair fall, premature greying, and certain neurological conditions affecting the head and neck.",
         process: "Ayurvedic Consultation ➔ Facial & Head Preparation ➔ Gentle Herbal Steam ➔ Administration of Medicated Herbal Oil Through Nasal Passages ➔ Therapeutic Massage ➔ Post-Treatment Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80",
+            "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80",
+            "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
         id: 6,
@@ -169,8 +199,14 @@ const treatments = [
         ],
         suitability: "Recommended for psoriasis, eczema, acne, varicose veins, chronic skin disorders, localized circulatory disturbances, non-healing ulcers, abscesses, inflammatory conditions, and certain joint disorders.",
         process: "Ayurvedic Consultation ➔ Assessment of Condition ➔ Preparation of Treatment Area ➔ Application of Medicinal Leech ➔ Controlled Bloodletting Therapy ➔ Wound Care & Post-Treatment Monitoring",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
+            "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+            "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
         id: 7,
@@ -197,8 +233,14 @@ const treatments = [
         ],
         suitability: "Recommended for corns (Kadhara), plantar fasciitis, heel pain, calcaneal spur, osteoarthritis, sciatica, frozen shoulder, tennis elbow, cervical spondylosis, lumbar spondylosis, and chronic musculoskeletal pain conditions.",
         process: "Ayurvedic Consultation ➔ Assessment of Affected Area ➔ Cleansing & Marking ➔ Controlled Therapeutic Heat Application (Agni Karma) ➔ Herbal Dressing ➔ Post-Treatment Care & Follow-Up",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+            "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
+            "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
         id: 8,
@@ -225,8 +267,14 @@ const treatments = [
         ],
         suitability: "Suitable for dry skin, oily skin, sensitive skin, dull complexion, uneven skin texture, stress-related skin concerns, and individuals seeking natural skin rejuvenation and relaxation.",
         process: "Skin Assessment & Dosha Analysis ➔ Herbal Cleansing ➔ Natural Exfoliation ➔ Herbal Steam Therapy ➔ Ayurvedic Facial Massage ➔ Customized Herbal Face Mask ➔ Toning & Moisturizing ➔ Relaxation",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=800&q=80",
+            "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
+            "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
         id: 9,
@@ -253,37 +301,122 @@ const treatments = [
         ],
         suitability: "Suitable for dry or cracked heels, tired feet, poor circulation, foot fatigue, rough skin, stress-related tension, and individuals seeking relaxation and natural foot care.",
         process: "Foot Assessment ➔ Herbal Foot Soak ➔ Natural Exfoliation ➔ Nail & Cuticle Care ➔ Ayurvedic Foot Massage ➔ Herbal Foot Mask ➔ Moisturizing & Finishing Treatment",
-        image: "YOUR_IMAGE_URL_HERE",
-        videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
+        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
+            "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=800&q=80",
+            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
     },
     {
-    id: 10,
-    name: "Fat Burning Therapy",
-    category: "beauty treatment",
-    duration: "45 Mins",
-    price: "Rs. 7,000",
-    description: "Rooted in the timeless wisdom of Ayurveda, our Abdominal Fat Reduction Therapy is thoughtfully designed to support natural body contouring and metabolic balance. This specialized treatment utilizes a unique blend of potent herbal powders enriched with Lekhana Guna — the Ayurvedic “scraping” property known for its ability to break down and eliminate accumulated fat and toxins from the body. Through carefully selected herbs and therapeutic application techniques, the treatment targets excess subcutaneous abdominal fat while stimulating circulation and enhancing the body’s natural detoxification process. In Ayurveda, Lekhana Guna is renowned for its capacity to reduce Meda Dhatu (adipose tissue), balance aggravated Kapha Dosha, and cleanse blocked bodily channels.",
-    features: [
-        "Uses potent herbal powders with Lekhana Guna",
-        "Targets excess subcutaneous abdominal fat",
-        "Balances aggravated Kapha Dosha",
-        "Cleanses blocked bodily channels",
-        "Stimulates healthy metabolic rate",
-        "Promotes natural body contouring"
-    ],
-    keyBenefits: [
-        "Supports reduction of abdominal fat deposits",
-        "Helps improve body contour and firmness",
-        "Assists in removing accumulated toxins (Ama)",
-        "Encourages healthy metabolism and circulation",
-        "Promotes lightness and vitality"
-    ],
-    suitability: "Recommended for individuals seeking natural weight management, abdominal fat reduction, metabolic balancing, and detoxification.",
-    process: "Ayurvedic Consultation ➔ Dosha & Meda Dhatu Assessment ➔ Application of Herbal Lekhana Powders ➔ Therapeutic Scraping Massage ➔ Post-Treatment Relaxation",
-    image: "YOUR_IMAGE_URL_HERE",
-    videoUrl: "YOUR_YOUTUBE_EMBED_URL_HERE"
-},
+        id: 10,
+        name: "Fat Burning Therapy",
+        category: "beauty treatment",
+        duration: "45 Mins",
+        price: "Rs. 7,000",
+        description: "Rooted in the timeless wisdom of Ayurveda, our Abdominal Fat Reduction Therapy is thoughtfully designed to support natural body contouring and metabolic balance. This specialized treatment utilizes a unique blend of potent herbal powders enriched with Lekhana Guna — the Ayurvedic 'scraping' property known for its ability to break down and eliminate accumulated fat and toxins from the body. Through carefully selected herbs and therapeutic application techniques, the treatment targets excess subcutaneous abdominal fat while stimulating circulation and enhancing the body's natural detoxification process. In Ayurveda, Lekhana Guna is renowned for its capacity to reduce Meda Dhatu (adipose tissue), balance aggravated Kapha Dosha, and cleanse blocked bodily channels.",
+        features: [
+            "Uses potent herbal powders with Lekhana Guna",
+            "Targets excess subcutaneous abdominal fat",
+            "Balances aggravated Kapha Dosha",
+            "Cleanses blocked bodily channels",
+            "Stimulates healthy metabolic rate",
+            "Promotes natural body contouring"
+        ],
+        keyBenefits: [
+            "Supports reduction of abdominal fat deposits",
+            "Helps improve body contour and firmness",
+            "Assists in removing accumulated toxins (Ama)",
+            "Encourages healthy metabolism and circulation",
+            "Promotes lightness and vitality"
+        ],
+        suitability: "Recommended for individuals seeking natural weight management, abdominal fat reduction, metabolic balancing, and detoxification.",
+        process: "Ayurvedic Consultation ➔ Dosha & Meda Dhatu Assessment ➔ Application of Herbal Lekhana Powders ➔ Therapeutic Scraping Massage ➔ Post-Treatment Relaxation",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
+            "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=800&q=80",
+            "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
+    },
+    {
+        id: 11,
+        name: "Online Free Consultation",
+        category: "clinic",
+        duration: "30 Mins",
+        price: "Free",
+        description: "Get professional Ayurvedic guidance from the comfort of your home. Our online consultation service allows you to discuss your health concerns with experienced practitioners and receive personalized treatment recommendations free of charge.",
+        features: [
+            "Free Initial Consultation — No charges for your first session",
+            "Expert Ayurvedic Advice from experienced practitioners",
+            "Personalized Guidance tailored to your health concerns",
+            "Convenient Online Access from anywhere, anytime",
+            "No Travel Required — Save time and energy"
+        ],
+        keyBenefits: [
+            "Free Initial Consultation",
+            "Expert Ayurvedic Advice",
+            "Personalized Guidance",
+            "Convenient Online Access",
+            "No Travel Required"
+        ],
+        suitability: "Ideal for individuals seeking professional Ayurvedic guidance from the comfort of their home, those with busy schedules, remote clients worldwide, first-time Ayurveda users, and anyone looking for expert health advice without the need to travel.",
+        process: "Online Registration ➔ Schedule Your Appointment ➔ Video/Phone Consultation with Ayurvedic Practitioner ➔ Personalized Treatment Recommendations ➔ Follow-up Support & Guidance",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+            "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
+            "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: "",
+        buttonLabel: "Appointment for Doctor"
+    },
+    {
+        id: 12,
+        name: "Ayurvedic Consultation",
+        category: "clinic",
+        duration: "60 Mins",
+        price: "Rs. 7,000",
+        description: "A comprehensive Ayurvedic consultation with our experienced practitioners. During this session, we assess your unique body constitution (Prakriti), identify any dosha imbalances (Vikriti), and create a personalized treatment plan tailored to your specific health concerns and wellness goals. This in-depth consultation includes pulse diagnosis (Nadi Pariksha), lifestyle recommendations, dietary guidance, and herbal treatment suggestions.",
+        features: [
+            "Detailed health history assessment",
+            "Pulse diagnosis (Nadi Pariksha)",
+            "Body constitution (Prakriti) analysis",
+            "Dosha imbalance (Vikriti) assessment",
+            "Personalized treatment plan",
+            "Dietary and lifestyle recommendations",
+            "Herbal medicine prescription",
+            "Follow-up care guidance"
+        ],
+        keyBenefits: [
+            "Personalized treatment approach",
+            "Understanding of your unique body type",
+            "Targeted health solutions",
+            "Natural and holistic healing guidance"
+        ],
+        suitability: "Recommended for new patients seeking Ayurvedic treatment, individuals with chronic health conditions, those wanting to understand their body constitution, and anyone looking for a holistic approach to health and wellness.",
+        process: "Registration & Health History ➔ Pulse Diagnosis (Nadi Pariksha) ➔ Prakriti & Vikriti Assessment ➔ Personalized Consultation ➔ Treatment Plan & Recommendations",
+        image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
+            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+        ],
+        videos: [],
+        videoUrl: ""
+    }
+];
 
+const DEFAULT_TREATMENT_IMAGE = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80";
+const DEFAULT_TREATMENT_IMAGES = [
+    "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
+    "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80"
 ];
 
 // Function to get all treatments

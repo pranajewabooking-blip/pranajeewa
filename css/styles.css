@@ -25,6 +25,15 @@ body {
     line-height: 1.6; /* */
     color: #333; /* */
     font-size: 0.95rem; /* */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+html {
+    min-height: 100%;
+    margin: 0;
 }
 
 h1 { font-size: 2rem; }
@@ -1300,34 +1309,6 @@ p { font-size: 0.95rem; }
     background: var(--primary-dark);
 }
 
-/* Floating WhatsApp */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-    z-index: 100;
-}
-
-.animate-pulse-vibrate {
-    animation: pulseVibrate 2s infinite;
-}
-
-@keyframes pulseVibrate {
-    0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.1) rotate(5deg); }
-    50% { transform: scale(1); }
-    75% { transform: scale(1.1) rotate(-5deg); }
-}
 
 /* ==========================================================================
    PREMIUM ANIMATED GRADIENT FOOTER
@@ -1340,6 +1321,7 @@ p { font-size: 0.95rem; }
     padding-bottom: 2rem;
     overflow: hidden;
     margin-top: auto;
+    margin-bottom: 0;
 }
 
 /* Live Wave Animation CSS */
@@ -1905,4 +1887,505 @@ p { font-size: 0.95rem; }
     color: #6b7280;
     line-height: 1.6;
     font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   FACEBOOK REVIEWS SECTION (Homepage)
+   ========================================================================== */
+.facebook-reviews-section {
+    position: relative;
+    padding: 5rem 1rem;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Decorative Ayurvedic background pattern — subtle */
+.facebook-reviews-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(220, 38, 38, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Section Heading — matching Ayurveda theme */
+.facebook-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Decorative underline matching .section-title::after */
+.facebook-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Subtitle */
+.facebook-section-subtitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #6b7280;
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Elfsight widget container — centering and responsive */
+.facebook-reviews-section .elfsight-app-3e47f7a0-527a-4ad4-aabb-aae30ad76267 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Fade-in scroll animation for the section */
+.facebook-reviews-section.scroll-animated {
+    animation: facebookFadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes facebookFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments — Desktop / Tablet / Mobile */
+@media (max-width: 1024px) {
+    .facebook-reviews-section {
+        padding: 4rem 1.5rem;
+    }
+    .facebook-section-title {
+        font-size: 1.8rem;
+    }
+    .facebook-section-subtitle {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .facebook-reviews-section {
+        padding: 3rem 1rem;
+    }
+    .facebook-section-title {
+        font-size: 1.5rem;
+    }
+    .facebook-section-subtitle {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .facebook-reviews-section {
+        padding: 2.5rem 0.75rem;
+    }
+    .facebook-section-title {
+        font-size: 1.3rem;
+    }
+    .facebook-section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   TREATMENT DETAILS MEDIA SLIDER / GALLERY
+   ========================================================================== */
+.treatment-media-slider-container {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+}
+
+.ms-main-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.ms-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: grab;
+    user-select: none;
+}
+
+.ms-track:active {
+    cursor: grabbing;
+}
+
+.ms-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
+}
+
+.ms-slide.ms-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.ms-slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ms-video-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ms-video-placeholder .ms-slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ms-video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.ms-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(220, 38, 38, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+    z-index: 5;
+}
+
+.ms-play-icon:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--primary);
+}
+
+/* Navigation Arrows */
+.ms-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.ms-main-wrapper:hover .ms-arrow {
+    opacity: 1;
+}
+
+.ms-arrow:hover {
+    background: rgba(220, 38, 38, 0.85);
+    border-color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.ms-arrow-left { left: 12px; }
+.ms-arrow-right { right: 12px; }
+
+/* Fullscreen Button */
+.ms-fullscreen-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.ms-main-wrapper:hover .ms-fullscreen-btn {
+    opacity: 1;
+}
+
+.ms-fullscreen-btn:hover {
+    background: rgba(220, 38, 38, 0.85);
+    transform: scale(1.05);
+}
+
+/* Navigation Dots */
+.ms-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.ms-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ms-dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.ms-dot.ms-dot-active {
+    background: var(--primary);
+    width: 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
+}
+
+/* Thumbnail Strip */
+.ms-thumbnails {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #111;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #333;
+}
+
+.ms-thumbnails::-webkit-scrollbar {
+    height: 4px;
+}
+
+.ms-thumbnails::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.ms-thumbnails::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.ms-thumb {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 56px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.ms-thumb:hover {
+    opacity: 0.9;
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.ms-thumb.ms-thumb-active {
+    opacity: 1;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+.ms-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ms-thumb-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 22px;
+    background: rgba(220, 38, 38, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: #fff;
+    pointer-events: none;
+}
+
+/* Fullscreen overrides */
+.treatment-media-slider-container:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.treatment-media-slider-container:-webkit-full-screen .ms-main-wrapper {
+    flex: 1;
+    height: auto;
+}
+
+.treatment-media-slider-container:-moz-full-screen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.treatment-media-slider-container:-moz-full-screen .ms-main-wrapper {
+    flex: 1;
+    height: auto;
+}
+
+.treatment-media-slider-container:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.treatment-media-slider-container:fullscreen .ms-main-wrapper {
+    flex: 1;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ms-main-wrapper {
+        height: 280px;
+    }
+    
+    .ms-thumb {
+        width: 64px;
+        height: 46px;
+    }
+    
+    .ms-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+        opacity: 1;
+    }
+    
+    .ms-fullscreen-btn {
+        opacity: 1;
+    }
+    
+    .ms-play-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ms-main-wrapper {
+        height: 220px;
+    }
+    
+    .ms-thumb {
+        width: 52px;
+        height: 38px;
+    }
+    
+    .ms-thumbnails {
+        padding: 8px 10px;
+        gap: 6px;
+    }
+    
+    .ms-play-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
 }

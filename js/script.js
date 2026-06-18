@@ -76,21 +76,28 @@ function renderTreatments() {
         return;
     }
     
+    console.log("Total treatments:", treatments.length);
+    
     treatments.forEach((treatment, index) => {
         const card = document.createElement('div');
         card.className = 'treatment-card';
         card.style.animationDelay = `${index * 0.1}s`;
+        const btnLabel = treatment.buttonLabel || 'View Details';
+        const defaultImg = typeof DEFAULT_TREATMENT_IMAGE !== 'undefined' ? DEFAULT_TREATMENT_IMAGE : 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80';
+        const imgSrc = treatment.image && treatment.image !== '' ? treatment.image : defaultImg;
         card.innerHTML = `
-            <img src="${treatment.image}" alt="${treatment.name}" class="treatment-image" loading="lazy">
+            <img src="${imgSrc}" alt="${treatment.name}" class="treatment-image" loading="lazy" onerror="this.src='${defaultImg}'">
             <div class="treatment-info">
                 <span class="treatment-category">${capitalizeCategory(treatment.category)}</span>
                 <h3 class="treatment-name">${treatment.name}</h3>
                 <p class="treatment-desc">${treatment.description.substring(0, 100)}...</p>
-                <button class="treatment-btn" onclick="showTreatmentDetails(${treatment.id})">View Details</button>
+                <button class="treatment-btn" onclick="showTreatmentDetails(${treatment.id})">${btnLabel}</button>
             </div>
         `;
         grid.appendChild(card);
     });
+    
+    console.log("Rendered cards:", document.querySelectorAll('.treatment-card').length);
     
     // Trigger animation
     setTimeout(() => {
@@ -131,46 +138,16 @@ function showTreatmentDetails(id) {
     const container = document.getElementById('treatment-details-content');
     if (!container) return;
 
-    const hasVideo = treatment.videoUrl ? true : false;
-    
-    let mediaBoxHTML = '';
-    if (hasVideo) {
-        mediaBoxHTML = `
-            <div class="treatment-media-slider-wrapper" style="width: 100%; margin-bottom: 15px;">
-                <div id="treatment-media-slider" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; width: 100%; max-height: 400px; border-radius: 12px; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    
-                    <div id="slide-item-1" style="flex: 0 0 100%; width: 100%; scroll-snap-align: start; position: relative;">
-                        <img src="${treatment.image}" alt="${treatment.name}" style="width: 100%; height: 400px; object-fit: cover; display: block;">
-                    </div>
-                    
-                    <div id="slide-item-2" style="flex: 0 0 100%; width: 100%; scroll-snap-align: start; position: relative; height: 400px;">
-                        <iframe width="100%" height="100%" src="${treatment.videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%;"></iframe>
-                    </div>
-                    
-                </div>
-                
-                <div style="display: flex; justify-content: center; gap: 12px; margin-top: 12px;">
-                    <div id="thumb-box-1" onclick="scrollToMediaSlide(1)" style="width: 60px; height: 45px; border-radius: 6px; overflow: hidden; border: 2px solid #dc2626; cursor: pointer; transition: all 0.3s ease; opacity: 1;">
-                        <img src="${treatment.image}" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    
-                    <div id="thumb-box-2" onclick="scrollToMediaSlide(2)" style="width: 60px; height: 45px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; opacity: 0.6; background: #1f2937; display: flex; align-items: center; justify-content: center; position: relative;">
-                        <img src="${treatment.image}" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
-                        <span style="position: absolute; font-size: 1.2rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.8);"></span>
-                    </div>
-                </div>
-            </div>
-        `;
-    } else {
-        mediaBoxHTML = `
-            <img src="${treatment.image}" alt="${treatment.name}" class="treatment-details-image" loading="lazy" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-        `;
-    }
+    // Build media slider items from images and videos arrays
+    const mediaItems = buildMediaItems(treatment);
+    const mediaBoxHTML = buildMediaSliderHTML(mediaItems, treatment);
 
     container.innerHTML = `
         <div class="treatment-details-main" style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 30px;">
             
-            ${mediaBoxHTML} <div class="treatment-details-info">
+                    ${mediaBoxHTML}
+                    
+                    <div class="treatment-details-info">
                 <span class="treatment-details-category" style="display: inline-block; background: #fee2e2; color: #dc2626; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px;">
                     ${capitalizeCategory(treatment.category)}
                 </span>
@@ -229,41 +206,349 @@ function showTreatmentDetails(id) {
         </div>
     `;
     
-    if (hasVideo) {
-        setTimeout(() => {
-            const slider = document.getElementById('treatment-media-slider');
-            const thumb1 = document.getElementById('thumb-box-1');
-            const thumb2 = document.getElementById('thumb-box-2');
-            
-            if (slider && thumb1 && thumb2) {
-                slider.addEventListener('scroll', function() {
-                    const width = slider.clientWidth;
-                    if (slider.scrollLeft >= width / 2) {
-                        thumb1.style.borderColor = 'transparent';
-                        thumb1.style.opacity = '0.6';
-                        thumb2.style.borderColor = '#dc2626';
-                        thumb2.style.opacity = '1';
-                    } else {
-                        thumb1.style.borderColor = '#dc2626';
-                        thumb1.style.opacity = '1';
-                        thumb2.style.borderColor = 'transparent';
-                        thumb2.style.opacity = '0.6';
-                    }
-                });
-            }
-        }, 100);
+    // Initialize the media slider after render
+    if (mediaItems.length > 0) {
+        setTimeout(() => initTreatmentMediaSlider(treatment.id), 150);
     }
 }
 
-function scrollToMediaSlide(slideNumber) {
-    const slider = document.getElementById('treatment-media-slider');
-    if (!slider) return;
+/**
+ * Build a flat array of media items from treatment images/videos config
+ */
+function buildMediaItems(treatment) {
+    const items = [];
+    const images = (treatment.images && treatment.images.length > 0) ? treatment.images : [treatment.image || DEFAULT_TREATMENT_IMAGE];
+    const videos = (treatment.videos && treatment.videos.length > 0) ? treatment.videos : (treatment.videoUrl ? [treatment.videoUrl] : []);
     
-    const width = slider.clientWidth;
-    if (slideNumber === 1) {
-        slider.scrollLeft = 0;
-    } else if (slideNumber === 2) {
-        slider.scrollLeft = width;
+    // Alternate images and videos: Slide 1=image, Slide 2=image, Slide 3=video, Slide 4=image, Slide 5=video
+    let imgIdx = 0, vidIdx = 0;
+    const totalSlides = Math.max(images.length, videos.length * 2);
+    
+    for (let i = 0; i < totalSlides; i++) {
+        // Interleave: place images in even positions, videos in odd positions that follow
+        if (i % 2 === 0 && imgIdx < images.length) {
+            items.push({ type: 'image', src: images[imgIdx++] });
+        } else if (vidIdx < videos.length) {
+            items.push({ type: 'video', src: videos[vidIdx++] });
+        } else if (imgIdx < images.length) {
+            items.push({ type: 'image', src: images[imgIdx++] });
+        }
+    }
+    
+    // Ensure at least one item
+    if (items.length === 0) {
+        items.push({ type: 'image', src: DEFAULT_TREATMENT_IMAGE });
+    }
+    
+    return items;
+}
+
+/**
+ * Build the HTML for the media slider
+ */
+function buildMediaSliderHTML(mediaItems, treatment) {
+    const hasMultiple = mediaItems.length > 1;
+    
+    // Build slides
+    let slidesHTML = '';
+    let thumbsHTML = '';
+    
+    mediaItems.forEach((item, index) => {
+        const isActive = index === 0;
+        
+        if (item.type === 'image') {
+            slidesHTML += `
+                <div class="ms-slide ${isActive ? 'ms-active' : ''}" data-index="${index}" data-type="image">
+                    <img src="${item.src}" alt="${treatment.name}" class="ms-slide-img" loading="${isActive ? 'eager' : 'lazy'}">
+                </div>
+            `;
+        } else {
+            slidesHTML += `
+                <div class="ms-slide ${isActive ? 'ms-active' : ''}" data-index="${index}" data-type="video" data-video="${item.src}">
+                    <div class="ms-video-placeholder">
+                        <img src="https://img.youtube.com/vi/${extractYouTubeId(item.src)}/maxresdefault.jpg" alt="Video thumbnail" class="ms-slide-img" loading="lazy" onerror="this.src='${treatment.image || DEFAULT_TREATMENT_IMAGE}'">
+                        <div class="ms-play-icon">▶</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Thumbnail
+        const thumbSrc = item.type === 'video'
+            ? `https://img.youtube.com/vi/${extractYouTubeId(item.src)}/default.jpg`
+            : item.src;
+        const isVideo = item.type === 'video';
+        
+        thumbsHTML += `
+            <div class="ms-thumb ${isActive ? 'ms-thumb-active' : ''}" data-index="${index}" onclick="goToMediaSlide(${index})">
+                <img src="${thumbSrc}" alt="Slide ${index + 1}" loading="lazy" onerror="this.src='${DEFAULT_TREATMENT_IMAGE}'">
+                ${isVideo ? '<span class="ms-thumb-play">▶</span>' : ''}
+            </div>
+        `;
+    });
+    
+    const arrowsHTML = hasMultiple ? `
+        <button class="ms-arrow ms-arrow-left" onclick="goToMediaSlide(window.msCurrentSlide - 1)" aria-label="Previous slide">‹</button>
+        <button class="ms-arrow ms-arrow-right" onclick="goToMediaSlide(window.msCurrentSlide + 1)" aria-label="Next slide">›</button>
+    ` : '';
+    
+    const dotsHTML = hasMultiple ? `
+        <div class="ms-dots">
+            ${mediaItems.map((_, i) => `<span class="ms-dot ${i === 0 ? 'ms-dot-active' : ''}" onclick="goToMediaSlide(${i})"></span>`).join('')}
+        </div>
+    ` : '';
+    
+    const fullscreenBtn = `<button class="ms-fullscreen-btn" onclick="toggleMediaFullscreen()" aria-label="Fullscreen">⛶</button>`;
+    
+    return `
+        <div class="treatment-media-slider-container" id="treatment-media-slider-${treatment.id}" data-total="${mediaItems.length}">
+            <div class="ms-main-wrapper">
+                <div class="ms-track" id="ms-track-${treatment.id}">
+                    ${slidesHTML}
+                </div>
+                ${arrowsHTML}
+                ${fullscreenBtn}
+                ${dotsHTML}
+            </div>
+            ${hasMultiple ? `
+            <div class="ms-thumbnails" id="ms-thumbnails-${treatment.id}">
+                ${thumbsHTML}
+            </div>
+            ` : ''}
+        </div>
+    `;
+}
+
+/**
+ * Extract YouTube video ID from various URL formats
+ */
+function extractYouTubeId(url) {
+    if (!url) return '';
+    const patterns = [
+        /(?:youtube\.com\/embed\/)([^?&]+)/,
+        /(?:youtube\.com\/watch\?v=)([^&]+)/,
+        /(?:youtu\.be\/)([^?&]+)/
+    ];
+    for (const p of patterns) {
+        const match = url.match(p);
+        if (match) return match[1];
+    }
+    return '';
+}
+
+/**
+ * Initialize the media slider — handles autoplay, dots, thumbnails, keyboard, swipe, drag
+ */
+function initTreatmentMediaSlider(treatmentId) {
+    const container = document.getElementById(`treatment-media-slider-${treatmentId}`);
+    if (!container) return;
+    
+    const track = container.querySelector('.ms-track');
+    const slides = container.querySelectorAll('.ms-slide');
+    const dots = container.querySelectorAll('.ms-dot');
+    const thumbs = container.querySelectorAll('.ms-thumb');
+    const total = slides.length;
+    
+    if (total === 0) return;
+    
+    let current = 0;
+    let autoplayInterval = null;
+    let isPlayingVideo = false;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragOffset = 0;
+    let isTransitioning = false;
+    
+    window.msCurrentSlide = 0;
+    
+    // Update active slide
+    function goTo(index) {
+        if (isTransitioning) return;
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        if (index === current) return;
+        
+        isTransitioning = true;
+        current = index;
+        window.msCurrentSlide = current;
+        
+        // Update slides
+        slides.forEach((s, i) => {
+            s.classList.toggle('ms-active', i === current);
+        });
+        
+        // Update dots
+        dots.forEach((d, i) => {
+            d.classList.toggle('ms-dot-active', i === current);
+        });
+        
+        // Update thumbs
+        thumbs.forEach((t, i) => {
+            t.classList.toggle('ms-thumb-active', i === current);
+        });
+        
+        // Handle video autoplay
+        handleVideoSlide(current);
+        
+        setTimeout(() => { isTransitioning = false; }, 400);
+    }
+    
+    // Handle video slide — load iframe when slide becomes active
+    function handleVideoSlide(index) {
+        const slide = slides[index];
+        if (!slide) return;
+        
+        const type = slide.dataset.type;
+        const videoSrc = slide.dataset.video;
+        
+        if (type === 'video' && videoSrc) {
+            // Check if iframe already loaded
+            if (!slide.querySelector('iframe')) {
+                const placeholder = slide.querySelector('.ms-video-placeholder');
+                if (placeholder) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = videoSrc + (videoSrc.includes('?') ? '&' : '?') + 'autoplay=1&enablejsapi=1';
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.className = 'ms-video-iframe';
+                    placeholder.innerHTML = '';
+                    placeholder.appendChild(iframe);
+                    
+                    // Stop autoplay
+                    stopAutoplay();
+                    isPlayingVideo = true;
+                    
+                    // Try to detect when video ends to resume autoplay (poll for iframe removal)
+                    const checkVideoEnd = setInterval(() => {
+                        if (window.msCurrentSlide !== current) {
+                            clearInterval(checkVideoEnd);
+                            isPlayingVideo = false;
+                            startAutoplay();
+                        }
+                    }, 1000);
+                }
+            }
+        } else {
+            isPlayingVideo = false;
+            // Remove any existing iframe in other slides to free resources
+            slides.forEach(s => {
+                if (s.dataset.type !== 'video') {
+                    const oldIframe = s.querySelector('iframe');
+                    if (oldIframe) {
+                        oldIframe.src = '';
+                        oldIframe.remove();
+                    }
+                }
+            });
+            startAutoplay();
+        }
+    }
+    
+    // Autoplay
+    function startAutoplay() {
+        stopAutoplay();
+        if (total <= 1 || isPlayingVideo) return;
+        autoplayInterval = setInterval(() => {
+            goTo(current + 1);
+        }, 5000);
+    }
+    
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+    
+    // Expose goTo globally
+    window.goToMediaSlide = function(index) {
+        goTo(index);
+    };
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function msKeyHandler(e) {
+        if (!document.contains(container)) {
+            document.removeEventListener('keydown', msKeyHandler);
+            return;
+        }
+        if (e.key === 'ArrowLeft') goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    }, { passive: true });
+    
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) goTo(current + 1);
+            else goTo(current - 1);
+        }
+        startAutoplay();
+    }, { passive: true });
+    
+    // Mouse drag support
+    track.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        track.style.cursor = 'grabbing';
+        stopAutoplay();
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        dragOffset = e.clientX - dragStartX;
+    });
+    
+    document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.cursor = 'grab';
+        if (Math.abs(dragOffset) > 50) {
+            if (dragOffset < 0) goTo(current + 1);
+            else goTo(current - 1);
+        }
+        dragOffset = 0;
+        startAutoplay();
+    });
+    
+    // Start autoplay
+    startAutoplay();
+    
+    // Handle first slide video
+    handleVideoSlide(0);
+}
+
+/**
+ * Toggle fullscreen mode for the media slider
+ */
+function toggleMediaFullscreen() {
+    const container = document.querySelector('.treatment-media-slider-container');
+    if (!container) return;
+    
+    if (!document.fullscreenElement) {
+        if (container.requestFullscreen) {
+            container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
     }
 }
 
@@ -372,17 +657,22 @@ function renderFilteredTreatments(treatments) {
         return;
     }
     
+    console.log("Filtered treatments count:", treatments ? treatments.length : 0);
+    
     treatments.forEach((treatment, index) => {
         const card = document.createElement('div');
         card.className = 'treatment-card';
         card.style.animationDelay = `${index * 0.1}s`;
+        const btnLabel = treatment.buttonLabel || 'View Details';
+        const defaultImg = typeof DEFAULT_TREATMENT_IMAGE !== 'undefined' ? DEFAULT_TREATMENT_IMAGE : 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80';
+        const imgSrc = treatment.image && treatment.image !== '' ? treatment.image : defaultImg;
         card.innerHTML = `
-            <img src="${treatment.image}" alt="${treatment.name}" class="treatment-image" loading="lazy">
+            <img src="${imgSrc}" alt="${treatment.name}" class="treatment-image" loading="lazy" onerror="this.src='${defaultImg}'">
             <div class="treatment-info">
                 <span class="treatment-category">${capitalizeCategory(treatment.category)}</span>
                 <h3 class="treatment-name">${treatment.name}</h3>
                 <p class="treatment-desc">${treatment.description.substring(0, 100)}...</p>
-                <button class="treatment-btn" onclick="showTreatmentDetails(${treatment.id})">View Details</button>
+                <button class="treatment-btn" onclick="showTreatmentDetails(${treatment.id})">${btnLabel}</button>
             </div>
         `;
         grid.appendChild(card);
@@ -477,7 +767,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Track standard content structures for animation
-    document.querySelectorAll('.value-card, .section-title, .about-content').forEach(el => {
+    document.querySelectorAll('.value-card, .section-title, .about-content, .facebook-reviews-section').forEach(el => {
         observer.observe(el);
     });
 
