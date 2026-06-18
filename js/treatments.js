@@ -95,9 +95,9 @@ const treatments = [
         ],
         suitability: "Who may experience Stress and anxiety relief,Muscle tension and stiffness,Body aches and fatigue,Poor circulation,Long sitting or standing hours,Post-exercise recovery,Deep relaxation,Overall wellbeing and skin nourishment,Tr process,Ayurvedic consultation,Oil massage,Herbal steam,Post treatment care",
         process: "Ayurvedic Consultation ➔ Prakriti Assessment ➔ Customized Herbal Oil Selection ➔ Full Body Abhyanga Massage ➔ Post-Treatment Relaxation",
-        image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80",
+        image: "https://drvijayskeralaayurveda.in/wp-content/uploads/2023/04/abhyangam.jpg",
         images: [
-            "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80",
+            "https://drvijayskeralaayurveda.in/wp-content/uploads/2023/04/abhyangam.jpg",
             "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80",
             "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
         ],
@@ -131,11 +131,10 @@ const treatments = [
         ],
         suitability: "Recommended for stress, anxiety, insomnia, mental fatigue, chronic headaches, migraines, emotional imbalance, and individuals seeking deep mental relaxation and rejuvenation.",
         process: "Ayurvedic Consultation ➔ Selection of Medicated Herbal Oil ➔ Gentle Forehead Oil Streaming (Shirodhara) ➔ Relaxation Therapy ➔ Post-Treatment Rest",
-        image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80",
+        image: "https://drpalikuttysayurveda.com/uploads/topics/17048886341916.JPG",
         images: [
-            "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=80",
-            "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
-            "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+            "https://drpalikuttysayurveda.com/uploads/topics/17048886341916.JPG",
+            "https://www.kottakkalayurveda.ae/uploads/thumb/232-288-1651216967.jpg"
         ],
         videos: [],
         videoUrl: ""
@@ -267,11 +266,11 @@ const treatments = [
         ],
         suitability: "Suitable for dry skin, oily skin, sensitive skin, dull complexion, uneven skin texture, stress-related skin concerns, and individuals seeking natural skin rejuvenation and relaxation.",
         process: "Skin Assessment & Dosha Analysis ➔ Herbal Cleansing ➔ Natural Exfoliation ➔ Herbal Steam Therapy ➔ Ayurvedic Facial Massage ➔ Customized Herbal Face Mask ➔ Toning & Moisturizing ➔ Relaxation",
-        image: "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=600&q=80",
+        image: "https://ik.imagekit.io/ddaq6yarh/image(2).png",
         images: [
-            "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=800&q=80",
-            "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
-            "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+            "https://themedermatology.com/wp-content/uploads/2024/08/dfb.png",
+            "https://ik.imagekit.io/ddaq6yarh/image(2).png",
+            "https://www.byrdie.com/thmb/w8OFLrEJZWEF-maFGrBkOUv-09M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/facialsocial-b0bf6073e908414a9630ae86ab345510.png"
         ],
         videos: [],
         videoUrl: ""
@@ -301,11 +300,11 @@ const treatments = [
         ],
         suitability: "Suitable for dry or cracked heels, tired feet, poor circulation, foot fatigue, rough skin, stress-related tension, and individuals seeking relaxation and natural foot care.",
         process: "Foot Assessment ➔ Herbal Foot Soak ➔ Natural Exfoliation ➔ Nail & Cuticle Care ➔ Ayurvedic Foot Massage ➔ Herbal Foot Mask ➔ Moisturizing & Finishing Treatment",
-        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80",
+        image: "https://ik.imagekit.io/ddaq6yarh/image.png",
         images: [
-            "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
-            "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=800&q=80",
-            "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+            "https://ik.imagekit.io/ddaq6yarh/image.png",
+            "https://www.bodycraft.co.in/hubfs/Imported_Blog_Media/spa-treatment-product-female-feet-hand-spa-1-1.jpg",
+            "https://beyondbeautybognor.co.uk/wp-content/uploads/2025/08/What-Is-a-Pedicure-%E2%80%93-Professional-Nail-and-Foot-Care-Treatment-1080x675.jpg"
         ],
         videos: [],
         videoUrl: ""
@@ -334,10 +333,10 @@ const treatments = [
         ],
         suitability: "Recommended for individuals seeking natural weight management, abdominal fat reduction, metabolic balancing, and detoxification.",
         process: "Ayurvedic Consultation ➔ Dosha & Meda Dhatu Assessment ➔ Application of Herbal Lekhana Powders ➔ Therapeutic Scraping Massage ➔ Post-Treatment Relaxation",
-        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80",
+        image: "https://d2i00yqiugujny.cloudfront.net/solution_small_thumbnail/jpeg-optimizer_closeup-man-getting-back-massage-with-detox-herbal-balls.jpg",
         images: [
-            "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
-            "https://images.unsplash.com/photo-1513097633097-329a3a64e0d6?w=800&q=80",
+            "https://www.ayurmana-uae.com/wp-content/uploads/2024/04/5549.jpg",
+            "https://d2i00yqiugujny.cloudfront.net/solution_small_thumbnail/jpeg-optimizer_closeup-man-getting-back-massage-with-detox-herbal-balls.jpg",
             "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80"
         ],
         videos: [],

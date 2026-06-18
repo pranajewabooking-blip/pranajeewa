@@ -767,8 +767,22 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Track standard content structures for animation
-    document.querySelectorAll('.value-card, .section-title, .about-content, .facebook-reviews-section').forEach(el => {
+    document.querySelectorAll('.value-card, .section-title, .about-content, .facebook-reviews-section, .scroll-animate').forEach(el => {
         observer.observe(el);
+    });
+    
+    // Special handling for .scroll-animate elements: add .animate-in when visible
+    const scrollAnimateObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                scrollAnimateObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+        scrollAnimateObserver.observe(el);
     });
 
     // Signature treatment card entrance animation
