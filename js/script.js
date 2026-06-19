@@ -337,7 +337,7 @@ function extractYouTubeId(url) {
 }
 
 /**
- * Initialize the media slider — handles autoplay, dots, thumbnails, keyboard, swipe, drag
+ * Initialize the media slider — manual only (arrows, dots, keyboard, swipe). No auto-sliding.
  */
 function initTreatmentMediaSlider(treatmentId) {
     const container = document.getElementById(`treatment-media-slider-${treatmentId}`);
@@ -352,8 +352,6 @@ function initTreatmentMediaSlider(treatmentId) {
     if (total === 0) return;
     
     let current = 0;
-    let autoplayInterval = null;
-    let isPlayingVideo = false;
     let isDragging = false;
     let dragStartX = 0;
     let dragOffset = 0;
@@ -361,7 +359,7 @@ function initTreatmentMediaSlider(treatmentId) {
     
     window.msCurrentSlide = 0;
     
-    // Update active slide
+    // Update active slide (manual only)
     function goTo(index) {
         if (isTransitioning) return;
         if (index < 0) index = total - 1;
@@ -387,7 +385,7 @@ function initTreatmentMediaSlider(treatmentId) {
             t.classList.toggle('ms-thumb-active', i === current);
         });
         
-        // Handle video autoplay
+        // Handle video slide
         handleVideoSlide(current);
         
         setTimeout(() => { isTransitioning = false; }, 400);
@@ -413,24 +411,10 @@ function initTreatmentMediaSlider(treatmentId) {
                     iframe.className = 'ms-video-iframe';
                     placeholder.innerHTML = '';
                     placeholder.appendChild(iframe);
-                    
-                    // Stop autoplay
-                    stopAutoplay();
-                    isPlayingVideo = true;
-                    
-                    // Try to detect when video ends to resume autoplay (poll for iframe removal)
-                    const checkVideoEnd = setInterval(() => {
-                        if (window.msCurrentSlide !== current) {
-                            clearInterval(checkVideoEnd);
-                            isPlayingVideo = false;
-                            startAutoplay();
-                        }
-                    }, 1000);
                 }
             }
         } else {
-            isPlayingVideo = false;
-            // Remove any existing iframe in other slides to free resources
+            // Remove any existing iframe in non-video slides to free resources
             slides.forEach(s => {
                 if (s.dataset.type !== 'video') {
                     const oldIframe = s.querySelector('iframe');
@@ -440,32 +424,15 @@ function initTreatmentMediaSlider(treatmentId) {
                     }
                 }
             });
-            startAutoplay();
         }
     }
     
-    // Autoplay
-    function startAutoplay() {
-        stopAutoplay();
-        if (total <= 1 || isPlayingVideo) return;
-        autoplayInterval = setInterval(() => {
-            goTo(current + 1);
-        }, 5000);
-    }
-    
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-    }
-    
-    // Expose goTo globally
+    // Expose goTo globally for onclick handlers
     window.goToMediaSlide = function(index) {
         goTo(index);
     };
     
-    // Keyboard navigation
+    // Keyboard navigation (desktop)
     document.addEventListener('keydown', function msKeyHandler(e) {
         if (!document.contains(container)) {
             document.removeEventListener('keydown', msKeyHandler);
@@ -475,13 +442,12 @@ function initTreatmentMediaSlider(treatmentId) {
         if (e.key === 'ArrowRight') goTo(current + 1);
     });
     
-    // Touch/swipe support
+    // Touch swipe support (mobile)
     let touchStartX = 0;
     let touchEndX = 0;
     
     track.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
-        stopAutoplay();
     }, { passive: true });
     
     track.addEventListener('touchend', (e) => {
@@ -491,15 +457,13 @@ function initTreatmentMediaSlider(treatmentId) {
             if (diff > 0) goTo(current + 1);
             else goTo(current - 1);
         }
-        startAutoplay();
     }, { passive: true });
     
-    // Mouse drag support
+    // Mouse drag support (desktop)
     track.addEventListener('mousedown', (e) => {
         isDragging = true;
         dragStartX = e.clientX;
         track.style.cursor = 'grabbing';
-        stopAutoplay();
     });
     
     document.addEventListener('mousemove', (e) => {
@@ -516,13 +480,9 @@ function initTreatmentMediaSlider(treatmentId) {
             else goTo(current - 1);
         }
         dragOffset = 0;
-        startAutoplay();
     });
     
-    // Start autoplay
-    startAutoplay();
-    
-    // Handle first slide video
+    // Handle first slide if it's a video
     handleVideoSlide(0);
 }
 
@@ -767,7 +727,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Track standard content structures for animation
-    document.querySelectorAll('.value-card, .section-title, .about-content, .facebook-reviews-section, .scroll-animate').forEach(el => {
+    document.querySelectorAll('.value-card, .section-title, .about-content, .reviews-section, .scroll-animate').forEach(el => {
         observer.observe(el);
     });
     
