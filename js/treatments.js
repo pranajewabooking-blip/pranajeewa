@@ -2,7 +2,7 @@
 const treatments = [
     {
         id: 1,
-        name: "Full Package (Massage + Steam + Herbal Scrub + Herbal Bath)",
+        name: "Full Package",
         category: "wellness treatment",
         duration: "180 Mins",
         price: "Rs. 6,500",
@@ -16,6 +16,24 @@ const treatments = [
             "Improves blood circulation",
             "Supports detoxification",
             "Restores energy and vitality"
+        ],
+        includedTreatments: [
+            {
+                name: "Ayurvedic Massage",
+                description: "Full body Ayurvedic oil massage using specially formulated herbal oils selected according to your body constitution to relax muscles, improve circulation, and nourish the skin."
+            },
+            {
+                name: "Herbal Steam Therapy",
+                description: "Therapeutic herbal steam that opens pores, promotes sweating, and helps remove deep-seated toxins from the body while easing muscle tension."
+            },
+            {
+                name: "Herbal Body Scrub",
+                description: "Natural herbal exfoliation that removes dead skin cells, deeply cleanses the skin, and leaves it smooth, soft, and rejuvenated."
+            },
+            {
+                name: "Herbal Bath",
+                description: "A refreshing herbal bath infused with natural Ayurvedic herbs that soothes the body, relaxes the mind, and completes the detoxification process."
+            }
         ],
         keyBenefits: [
             "Complete body transformation",

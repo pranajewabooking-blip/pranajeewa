@@ -181,6 +181,19 @@ function showTreatmentDetails(id) {
         ${treatment.keyBenefits ? treatment.keyBenefits.map(benefit => `<li style="display: flex; align-items: center; gap: 10px; background: #ecfdf5; padding: 10px; border-radius: 8px;">✅ ${benefit}</li>`).join('') : '<li style="color: #6b7280;">Benefits coming soon.</li>'}
     </ul>
 </div>
+            ${treatment.includedTreatments ? `
+            <div style="grid-column: 1 / -1;">
+                <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #1f2937;">📋 Included Treatments:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                    ${treatment.includedTreatments.map(item => `
+                        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 15px;">
+                            <h5 style="font-size: 1rem; font-weight: 700; color: #dc2626; margin: 0 0 8px 0;">🟠 ${item.name}</h5>
+                            <p style="font-size: 0.9rem; color: #4b5563; line-height: 1.5; margin: 0;">${item.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            ` : ''}
             
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div>
